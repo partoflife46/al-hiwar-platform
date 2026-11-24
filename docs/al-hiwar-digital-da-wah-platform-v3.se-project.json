@@ -1,0 +1,5016 @@
+{
+  "format": "blueline-uml",
+  "version": 1,
+  "name": "Al Hiwar Digital Da'wah Platform v3",
+  "author": "Adi Fiqriyan Syah & Abidunn",
+  "modelVersion": "1.0",
+  "doc": "",
+  "rootId": "pk85gnja2evr0",
+  "packages": {
+    "pk85gnja2evr0": {
+      "id": "pk85gnja2evr0",
+      "name": "Al Hiwar Digital Da'wah Platform v3",
+      "parentId": null,
+      "doc": ""
+    },
+    "pkagyf3dgevr1": {
+      "id": "pkagyf3dgevr1",
+      "name": "Requirements",
+      "parentId": "pk85gnja2evr0",
+      "doc": ""
+    },
+    "pk3irpm2fevr2": {
+      "id": "pk3irpm2fevr2",
+      "name": "Domain model",
+      "parentId": "pk85gnja2evr0",
+      "doc": ""
+    }
+  },
+  "diagrams": {
+    "dgibvo31yevr1": {
+      "id": "dgibvo31yevr1",
+      "kind": "usecase",
+      "name": "Al Hiwar use cases - Visitors and users",
+      "pkgId": "pkagyf3dgevr1",
+      "owner": null,
+      "doc": "",
+      "nodes": [
+        {
+          "id": "ndk2ej399evr9",
+          "el": "el2chfjevevr2",
+          "x": 260,
+          "y": 20,
+          "w": 700,
+          "h": 1420
+        },
+        {
+          "id": "ndmpetbt0evr9",
+          "el": "el08f0alrevr9",
+          "x": 60,
+          "y": 120,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "ndf7t4km7evr9",
+          "el": "el965y5s9evr3",
+          "x": 60,
+          "y": 360,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "ndaeuqp87evr9",
+          "el": "el1gmr0knevr3",
+          "x": 60,
+          "y": 690,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "nd5p3talyevr9",
+          "el": "el94haj9eevr3",
+          "x": -60,
+          "y": 1070,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "ndf0ark6yevr9",
+          "el": "el80j8sufevr3",
+          "x": 300,
+          "y": 50,
+          "w": 200,
+          "h": 60
+        },
+        {
+          "id": "nd9qv6xc3evr9",
+          "el": "elz864ctrevr4",
+          "x": 610,
+          "y": 60,
+          "w": 190,
+          "h": 60
+        },
+        {
+          "id": "ndwuss057evr9",
+          "el": "elnd5198sevr9",
+          "x": 610,
+          "y": 160,
+          "w": 190,
+          "h": 60
+        },
+        {
+          "id": "nd13ctdrpevr9",
+          "el": "elkk2rj5sevr4",
+          "x": 300,
+          "y": 170,
+          "w": 230,
+          "h": 60
+        },
+        {
+          "id": "ndpc6nfakevr9",
+          "el": "eldqkzm9qevr3",
+          "x": 300,
+          "y": 330,
+          "w": 200,
+          "h": 60
+        },
+        {
+          "id": "nd4zuz0kuevr9",
+          "el": "el2gwi21xevr4",
+          "x": 610,
+          "y": 330,
+          "w": 200,
+          "h": 60
+        },
+        {
+          "id": "ndzdgvv7aevr9",
+          "el": "elyqk637kevr3",
+          "x": 300,
+          "y": 430,
+          "w": 200,
+          "h": 60
+        },
+        {
+          "id": "nd2n8cnn1evr9",
+          "el": "elqxqsxlaevr9",
+          "x": 300,
+          "y": 565,
+          "w": 330,
+          "h": 60
+        },
+        {
+          "id": "ndzd5mh22evr9",
+          "el": "elkvbg5bvevr4",
+          "x": 300,
+          "y": 710,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndo1tcelbevr9",
+          "el": "el47ckn4bevr4",
+          "x": 300,
+          "y": 840,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndijlz4b4evr9",
+          "el": "el5b3bchievr9",
+          "x": 640,
+          "y": 840,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "nd4tgq0v1evr9",
+          "el": "elwj2s15devr4",
+          "x": 300,
+          "y": 970,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndqv1f4xwevr9",
+          "el": "el1r4zefjevr4",
+          "x": 300,
+          "y": 1050,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndnh63vykevr9",
+          "el": "elh89hhwkevr4",
+          "x": 300,
+          "y": 1130,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndwvav1itevr9",
+          "el": "el0djtrinevr4",
+          "x": 300,
+          "y": 1210,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndzhuhi7uevr9",
+          "el": "elno1pdktevr4",
+          "x": 300,
+          "y": 1340,
+          "w": 220,
+          "h": 60
+        }
+      ],
+      "links": [
+        {
+          "id": "lnhaj9q5devr9",
+          "rel": "rlmjm4nhaevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lngytlcrqevr9",
+          "rel": "rl5t0i2b7evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnophbh9levr9",
+          "rel": "rlh0u3cjjevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnlkz919xevr9",
+          "rel": "rl7ucscjhevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln3fi2l13evr9",
+          "rel": "rlrym7gi2evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnukm542vevr9",
+          "rel": "rljtom2dsevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln9q2psarevr9",
+          "rel": "rligy9wo5evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnh8rzwzsevr9",
+          "rel": "rlukeiviaevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnjzd3coxevr9",
+          "rel": "rlqbi42ooevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnc895npkevr9",
+          "rel": "rljgt93jsevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln3gblincevr9",
+          "rel": "rl2iaup08evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnt8moomwevr9",
+          "rel": "rlvwmjjpsevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnq8ek6dlevr9",
+          "rel": "rl9vrylwievr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnhmbtuowevr9",
+          "rel": "rl9jh3ue2evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnoipm779evr9",
+          "rel": "rlsuuo0jzevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lng5iu94cevr9",
+          "rel": "rlvb5erjcevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln41jnx78evr9",
+          "rel": "rlrh9a5ojevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnxaiyac5evr9",
+          "rel": "rlyty5z5wevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnziu5x91evr9",
+          "rel": "rlj20w43hevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnc2rz4l6evr9",
+          "rel": "rlql80ucvevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnb7xlmrxevr9",
+          "rel": "rlz3bb1leevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln33p1nrxevr9",
+          "rel": "rl3my5zocevr9",
+          "style": "direct"
+        }
+      ]
+    },
+    "dg6wp51edevr9": {
+      "id": "dg6wp51edevr9",
+      "kind": "usecase",
+      "name": "Al Hiwar use cases - Staff",
+      "pkgId": "pkagyf3dgevr1",
+      "owner": null,
+      "doc": "",
+      "nodes": [
+        {
+          "id": "ndiasq5hsevr9",
+          "el": "elvbtdcl3evr9",
+          "x": 260,
+          "y": 20,
+          "w": 960,
+          "h": 1800
+        },
+        {
+          "id": "ndrw4rnapevr9",
+          "el": "el8dx6aq4evr9",
+          "x": 170,
+          "y": 80,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "nd4calukvevr9",
+          "el": "elay4gvc6evr3",
+          "x": -40,
+          "y": 470,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "nd3pm0lhgevr9",
+          "el": "elsu1vqobevr3",
+          "x": -40,
+          "y": 870,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "nds9bco00evr9",
+          "el": "elthxj4svevr3",
+          "x": -40,
+          "y": 1190,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "ndd009rmkevr9",
+          "el": "elnlguyvvevr3",
+          "x": -40,
+          "y": 1560,
+          "w": 60,
+          "h": 96
+        },
+        {
+          "id": "ndw9cjv9tevr9",
+          "el": "elqw0s3doevr5",
+          "x": 700,
+          "y": 350,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndkf5o5vcevr9",
+          "el": "elkhvupcwevr5",
+          "x": 660,
+          "y": 450,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "nd1wv9entevr9",
+          "el": "elwh3segsevr9",
+          "x": 960,
+          "y": 450,
+          "w": 230,
+          "h": 60
+        },
+        {
+          "id": "ndrpqw8pjevr9",
+          "el": "elj9fd8qwevr9",
+          "x": 680,
+          "y": 550,
+          "w": 340,
+          "h": 60
+        },
+        {
+          "id": "nd71ndtn9evr9",
+          "el": "elcwtq64kevr5",
+          "x": 300,
+          "y": 350,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndcfbtj3nevr9",
+          "el": "el8sind0eevr5",
+          "x": 300,
+          "y": 450,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndek4k3ehevr9",
+          "el": "elpkfo0ufevr9",
+          "x": 300,
+          "y": 650,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "nd48ghik1evr9",
+          "el": "el0kelo0oevr5",
+          "x": 300,
+          "y": 790,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "nddd7qo8hevr9",
+          "el": "elwhuwy7jevr9",
+          "x": 300,
+          "y": 870,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndg0s0aobevr9",
+          "el": "elaaiju5revr5",
+          "x": 300,
+          "y": 950,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndsl8s4osevr9",
+          "el": "el7ql1kttevr5",
+          "x": 300,
+          "y": 1140,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndkp5y94yevr9",
+          "el": "el6pzrsv8evr5",
+          "x": 300,
+          "y": 1220,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndw61f2saevr9",
+          "el": "elxdgcfieevr5",
+          "x": 300,
+          "y": 1300,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndqk018p6evr9",
+          "el": "els6zyhxsevr9",
+          "x": 300,
+          "y": 1380,
+          "w": 260,
+          "h": 60
+        },
+        {
+          "id": "nd7txfj5mevr9",
+          "el": "eluub15eqevr9",
+          "x": 300,
+          "y": 1490,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "nd4ugtnbzevr9",
+          "el": "elg3g62g5evr5",
+          "x": 300,
+          "y": 1570,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "nd45yyp46evr9",
+          "el": "elhi8twyvevr9",
+          "x": 300,
+          "y": 1650,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndkrquz1revr9",
+          "el": "eloc9zu2revr6",
+          "x": 300,
+          "y": 1730,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndphtuqzdevr9",
+          "el": "elkg2i33fevr9",
+          "x": -300,
+          "y": 10,
+          "w": 330,
+          "h": 90
+        }
+      ],
+      "links": [
+        {
+          "id": "lng1avrhmevr9",
+          "rel": "rlizm5ouoevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnftgsiehevr9",
+          "rel": "rl2nwzbftevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lncyvv51jevr9",
+          "rel": "rl83p2rynevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln0tsu1rmevr9",
+          "rel": "rllfzkmb1evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnscro8skevr9",
+          "rel": "rlualg9j2evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnuuxv6l4evr9",
+          "rel": "rlix2d6rwevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln9m91tblevr9",
+          "rel": "rliuzslyaevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnka0f2g4evr9",
+          "rel": "rlsksveg4evr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln6prqy12evr9",
+          "rel": "rlbfb3sj6evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnnqvlwikevr9",
+          "rel": "rl6tet89tevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnxdby4o2evr9",
+          "rel": "rl4z28u3jevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnkri4pd6evr9",
+          "rel": "rl0shk0f5evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnem8de81evr9",
+          "rel": "rl78gwzoyevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lndlbclzuevr9",
+          "rel": "rlqh6ysq8evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnncy1qa3evr9",
+          "rel": "rlfqwkr6aevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnxojcuouevr9",
+          "rel": "rlpqkrjywevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnt37pfzvevr9",
+          "rel": "rlkc41s73evr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln88v3shnevr9",
+          "rel": "rlsx1nithevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln7ranrwzevr9",
+          "rel": "rlkl7f7n0evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnhmbz075evr9",
+          "rel": "rl6nqr8d7evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnb20knzcevr9",
+          "rel": "rl1obo4irevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnwv0xztzevr9",
+          "rel": "rlcs1o6n6evr9",
+          "style": "direct"
+        }
+      ]
+    },
+    "dgava49sqevr2": {
+      "id": "dgava49sqevr2",
+      "kind": "class",
+      "name": "Domain classes",
+      "pkgId": "pk3irpm2fevr2",
+      "owner": null,
+      "doc": "",
+      "nodes": [
+        {
+          "id": "ndc3c6gldevr3",
+          "el": "elkdtmqy3evr1",
+          "x": 370,
+          "y": -220,
+          "w": 260,
+          "h": 65
+        },
+        {
+          "id": "nd85grz4oevr3",
+          "el": "elwndhp74evr1",
+          "x": -570,
+          "y": 320,
+          "w": 210,
+          "h": 60
+        },
+        {
+          "id": "ndww70cj1evr3",
+          "el": "el7ql6w0zevr1",
+          "x": 40,
+          "y": 290,
+          "w": 230,
+          "h": 60
+        },
+        {
+          "id": "ndtbss6twevr3",
+          "el": "elfr1eguaevr1",
+          "x": 650,
+          "y": 370,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndczz4fd4evr3",
+          "el": "elklc6kykevr1",
+          "x": 1110,
+          "y": 250,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "nd45g7i8xevr3",
+          "el": "elrxrsc3oevr1",
+          "x": 1180,
+          "y": 500,
+          "w": 230,
+          "h": 60
+        },
+        {
+          "id": "ndutuut1revr3",
+          "el": "el2aqmxzrevr1",
+          "x": 1600,
+          "y": 190,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndnk9dm6xevr3",
+          "el": "ellpgzuo7evr1",
+          "x": 490,
+          "y": 680,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndd3wnx8vevr3",
+          "el": "elhqgbudhevr1",
+          "x": 510,
+          "y": 900,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndubgcxl1evr3",
+          "el": "el3aem1qxevr1",
+          "x": 40,
+          "y": 760,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndjuhbtldevr3",
+          "el": "elmdrp0elevr2",
+          "x": 1230,
+          "y": 690,
+          "w": 230,
+          "h": 60
+        },
+        {
+          "id": "nd4rfdtrpevr3",
+          "el": "el3tnhttdevr2",
+          "x": 800,
+          "y": 610,
+          "w": 230,
+          "h": 60
+        },
+        {
+          "id": "nd9pp5zu0evr3",
+          "el": "elnbg5lzdevr2",
+          "x": 1240,
+          "y": 1130,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndoidl36devr3",
+          "el": "elzydashsevr2",
+          "x": 1870,
+          "y": 1070,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndaq8a6tbevr3",
+          "el": "elbl37qr2evr2",
+          "x": 1570,
+          "y": 1300,
+          "w": 210,
+          "h": 60
+        },
+        {
+          "id": "ndhb1eoepevr3",
+          "el": "el10c6b8aevr2",
+          "x": 1560,
+          "y": 530,
+          "w": 240,
+          "h": 60
+        },
+        {
+          "id": "ndzhjzsecevr3",
+          "el": "elj1hwz5oevr2",
+          "x": 1550,
+          "y": 1110,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndbtew01cevr3",
+          "el": "el79ugrj5evr2",
+          "x": 1810,
+          "y": 870,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndrxly5vqevr3",
+          "el": "el30zqzarevr2",
+          "x": 1870,
+          "y": 460,
+          "w": 220,
+          "h": 60
+        },
+        {
+          "id": "ndadh8tdwevr9",
+          "el": "elbxxqjz9evr9",
+          "x": 1050,
+          "y": -130,
+          "w": 230,
+          "h": 60
+        },
+        {
+          "id": "nd24lryr0evr9",
+          "el": "el23ygs3vevr9",
+          "x": 1490,
+          "y": -30,
+          "w": 330,
+          "h": 110
+        },
+        {
+          "id": "ndpz3br4wevr9",
+          "el": "elvf6ibfnevr9",
+          "x": 200,
+          "y": 520,
+          "w": 300,
+          "h": 100
+        },
+        {
+          "id": "nd3q3kikjevr9",
+          "el": "elfxuru1kevr9",
+          "x": -370,
+          "y": 880,
+          "w": 320,
+          "h": 110
+        },
+        {
+          "id": "ndgiml8k0evr9",
+          "el": "el2dhgmmcevr9",
+          "x": 1290,
+          "y": 940,
+          "w": 340,
+          "h": 120
+        },
+        {
+          "id": "nd47yr25sevr9",
+          "el": "el65us60qevr9",
+          "x": -250,
+          "y": 560,
+          "w": 300,
+          "h": 100
+        }
+      ],
+      "links": [
+        {
+          "id": "lnjvxanjcevr3",
+          "rel": "rlve3fdklevr1",
+          "style": "direct"
+        },
+        {
+          "id": "lnfilgmprevr3",
+          "rel": "rln4o8hw2evr1",
+          "style": "direct"
+        },
+        {
+          "id": "lnb5zg38sevr3",
+          "rel": "rlo67cdn8evr1",
+          "style": "direct"
+        },
+        {
+          "id": "lnxqze6neevr3",
+          "rel": "rls8orp8uevr1",
+          "style": "direct"
+        },
+        {
+          "id": "lnzqu110ievr3",
+          "rel": "rljgrwafuevr1",
+          "style": "direct"
+        },
+        {
+          "id": "ln5c4j90ievr3",
+          "rel": "rlsllpbmbevr1",
+          "style": "direct"
+        },
+        {
+          "id": "lnf52t5zcevr3",
+          "rel": "rl8ex13czevr1",
+          "style": "direct"
+        },
+        {
+          "id": "ln7pxgzi5evr3",
+          "rel": "rlv1zctytevr1",
+          "style": "direct"
+        },
+        {
+          "id": "ln18vxqs9evr3",
+          "rel": "rlx1w840wevr1",
+          "style": "direct"
+        },
+        {
+          "id": "lnznq3hgnevr3",
+          "rel": "rlyyzpwt0evr1",
+          "style": "direct"
+        },
+        {
+          "id": "lnj0u19w0evr3",
+          "rel": "rlox2o3zbevr2",
+          "style": "direct"
+        },
+        {
+          "id": "lncitviiyevr3",
+          "rel": "rlj1sljb2evr2",
+          "style": "direct"
+        },
+        {
+          "id": "lngc3ixdfevr3",
+          "rel": "rlaeydr7nevr2",
+          "style": "direct"
+        },
+        {
+          "id": "lnaavaxbzevr3",
+          "rel": "rlhog0zr6evr2",
+          "style": "direct"
+        },
+        {
+          "id": "lnn6i33fpevr3",
+          "rel": "rljs1nbdqevr2",
+          "style": "direct"
+        },
+        {
+          "id": "lnm2o98znevr3",
+          "rel": "rlls53pb2evr2",
+          "style": "direct"
+        },
+        {
+          "id": "lns8s0fr2evr3",
+          "rel": "rlp6r93xyevr3",
+          "style": "direct"
+        },
+        {
+          "id": "lnb7b6pfnevr3",
+          "rel": "rlhtz6xuaevr3",
+          "style": "direct"
+        },
+        {
+          "id": "lnhbaa4kpevr3",
+          "rel": "rld2om90gevr3",
+          "style": "direct"
+        },
+        {
+          "id": "lnjr7iyjlevr3",
+          "rel": "rlnidsc9ievr3",
+          "style": "direct"
+        },
+        {
+          "id": "lnvc15cbfevr3",
+          "rel": "rlo8m9ktzevr3",
+          "style": "direct"
+        },
+        {
+          "id": "ln3jve7uhevr3",
+          "rel": "rll2nqwryevr3",
+          "style": "direct"
+        },
+        {
+          "id": "ln67xq6cbevr9",
+          "rel": "rljde6nnoevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnqixkhi0evr9",
+          "rel": "rldtnrj5levr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnrmi9mwrevr9",
+          "rel": "rlvoh7u7eevr9",
+          "style": "direct"
+        },
+        {
+          "id": "ln4wpl4g0evr9",
+          "rel": "rls4z3cinevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnstg2leyevr9",
+          "rel": "rlcbfo9cqevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnsr3025jevr9",
+          "rel": "rl8u5d3nwevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnyq1oiecevr9",
+          "rel": "rlazqpu86evr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnpx1f0baevr9",
+          "rel": "rlmn5mw6vevr9",
+          "style": "direct"
+        },
+        {
+          "id": "lnl7yvdtyevr9",
+          "rel": "rl3rc61m8evr9",
+          "style": "direct"
+        }
+      ]
+    },
+    "dgvkxj22zevr3": {
+      "id": "dgvkxj22zevr3",
+      "kind": "sequence",
+      "name": "Engage in Private Dialogue",
+      "pkgId": "pkagyf3dgevr1",
+      "owner": "el47ckn4bevr4",
+      "doc": "",
+      "nodes": [
+        {
+          "id": "nd0vf0fpmevr9",
+          "el": "elgugpa6hevr7",
+          "x": 30,
+          "y": 40,
+          "w": 160,
+          "h": 600
+        },
+        {
+          "id": "ndu1rfufievr9",
+          "el": "elfhko2zvevr9",
+          "x": 235,
+          "y": 40,
+          "w": 160,
+          "h": 600
+        },
+        {
+          "id": "nduz19vivevr9",
+          "el": "elqc7lm3sevr7",
+          "x": 440,
+          "y": 40,
+          "w": 170,
+          "h": 600
+        },
+        {
+          "id": "ndqzp19sjevr9",
+          "el": "elosjsohievr9",
+          "x": 655,
+          "y": 40,
+          "w": 160,
+          "h": 600
+        },
+        {
+          "id": "ndmvjd54yevr9",
+          "el": "elmc6mk9eevr7",
+          "x": 860,
+          "y": 40,
+          "w": 160,
+          "h": 600
+        },
+        {
+          "id": "ndflfm1ogevr9",
+          "el": "ell79ccffevr9",
+          "x": 1060,
+          "y": 330,
+          "w": 280,
+          "h": 130
+        },
+        {
+          "id": "ndqq5cxjievr9",
+          "el": "elonqjmxpevr9",
+          "x": 1060,
+          "y": 480,
+          "w": 280,
+          "h": 160
+        }
+      ],
+      "links": [
+        {
+          "id": "lngkptihkevr9",
+          "rel": "rlneyrdgrevr9",
+          "style": "direct",
+          "y": 120
+        },
+        {
+          "id": "lnkzx4s7devr9",
+          "rel": "rlvkccq0uevr9",
+          "style": "direct",
+          "y": 158
+        },
+        {
+          "id": "ln9mqdwsrevr9",
+          "rel": "rl347xem7evr9",
+          "style": "direct",
+          "y": 196
+        },
+        {
+          "id": "ln89gb721evr9",
+          "rel": "rl20abor3evr9",
+          "style": "direct",
+          "y": 234
+        },
+        {
+          "id": "ln8klfh3eevr9",
+          "rel": "rl6oq2fupevr9",
+          "style": "direct",
+          "y": 272
+        },
+        {
+          "id": "ln486it4tevr9",
+          "rel": "rll4zlz77evr9",
+          "style": "direct",
+          "y": 310
+        },
+        {
+          "id": "lnu6rw2d2evr9",
+          "rel": "rlga0uiz0evr9",
+          "style": "direct",
+          "y": 350
+        },
+        {
+          "id": "lnaplbo1vevr9",
+          "rel": "rlahhh3b6evr9",
+          "style": "direct",
+          "y": 390
+        },
+        {
+          "id": "lnhchvvq6evr9",
+          "rel": "rlpu1n8ryevr9",
+          "style": "direct",
+          "y": 428
+        },
+        {
+          "id": "lni9i3zyxevr9",
+          "rel": "rlzt767kuevr9",
+          "style": "direct",
+          "y": 466
+        },
+        {
+          "id": "lncnfisf3evr9",
+          "rel": "rlywgufddevr9",
+          "style": "direct",
+          "y": 504
+        },
+        {
+          "id": "lncas5wk2evr9",
+          "rel": "rlw5pvammevr9",
+          "style": "direct",
+          "y": 544
+        },
+        {
+          "id": "ln1v834tievr9",
+          "rel": "rlt49ltetevr9",
+          "style": "direct",
+          "y": 580
+        }
+      ]
+    },
+    "dgpjdr3kfevr4": {
+      "id": "dgpjdr3kfevr4",
+      "kind": "sequence",
+      "name": "Submit Shahadah and Embrace Islam",
+      "pkgId": "pkagyf3dgevr1",
+      "owner": "elkvbg5bvevr4",
+      "doc": "",
+      "nodes": [
+        {
+          "id": "ndza8upo0evr3",
+          "el": "el0yq8ma2evr6",
+          "x": 30,
+          "y": 40,
+          "w": 150,
+          "h": 520
+        },
+        {
+          "id": "ndthmxgu9evr3",
+          "el": "el524bmcwevr6",
+          "x": 230,
+          "y": 40,
+          "w": 160,
+          "h": 520
+        },
+        {
+          "id": "ndn0dz67levr3",
+          "el": "el0fs6s96evr6",
+          "x": 420,
+          "y": 40,
+          "w": 160,
+          "h": 520
+        },
+        {
+          "id": "ndsly4w3xevr3",
+          "el": "elmpiekfaevr6",
+          "x": 630,
+          "y": 40,
+          "w": 160,
+          "h": 520
+        },
+        {
+          "id": "ndl6xi40nevr3",
+          "el": "elkpblpi9evr6",
+          "x": 830,
+          "y": 40,
+          "w": 160,
+          "h": 520
+        },
+        {
+          "id": "nd03t3q4zevr3",
+          "el": "elazqcc69evr6",
+          "x": 1030,
+          "y": 220,
+          "w": 210,
+          "h": 90
+        }
+      ],
+      "links": [
+        {
+          "id": "lnio7m50aevr3",
+          "rel": "rlcxy6ekfevr6",
+          "style": "direct",
+          "y": 120
+        },
+        {
+          "id": "lnvzyjuh3evr3",
+          "rel": "rlitgm9zsevr6",
+          "style": "direct",
+          "y": 155
+        },
+        {
+          "id": "lnrzx873pevr3",
+          "rel": "rlkt3lhi4evr6",
+          "style": "direct",
+          "y": 190
+        },
+        {
+          "id": "ln6i41khdevr3",
+          "rel": "rlvlnv66nevr6",
+          "style": "direct",
+          "y": 225
+        },
+        {
+          "id": "lncy3f96qevr3",
+          "rel": "rlq7efslaevr6",
+          "style": "direct",
+          "y": 265
+        },
+        {
+          "id": "lnl2fl1lcevr3",
+          "rel": "rlxh9whwievr6",
+          "style": "direct",
+          "y": 300
+        },
+        {
+          "id": "lnjgfi8lpevr3",
+          "rel": "rlzmqxoe4evr7",
+          "style": "direct",
+          "y": 340
+        },
+        {
+          "id": "lnppbar3xevr3",
+          "rel": "rlack2wlkevr7",
+          "style": "direct",
+          "y": 380
+        },
+        {
+          "id": "ln2685kwtevr3",
+          "rel": "rlx8homjmevr7",
+          "style": "direct",
+          "y": 415
+        },
+        {
+          "id": "ln29nsihbevr3",
+          "rel": "rlwen3raqevr7",
+          "style": "direct",
+          "y": 455
+        },
+        {
+          "id": "ln3912et7evr3",
+          "rel": "rluann5ubevr7",
+          "style": "direct",
+          "y": 490
+        }
+      ]
+    },
+    "dgm0ng61cevr5": {
+      "id": "dgm0ng61cevr5",
+      "kind": "sequence",
+      "name": "Complete Learning Path and Obtain Certificate",
+      "pkgId": "pkagyf3dgevr1",
+      "owner": "elno1pdktevr4",
+      "doc": "",
+      "nodes": [
+        {
+          "id": "nd69fwzxoevr3",
+          "el": "elry1mp87evr6",
+          "x": 30,
+          "y": 40,
+          "w": 150,
+          "h": 500
+        },
+        {
+          "id": "nd06eubltevr3",
+          "el": "elb8ax7t4evr6",
+          "x": 240,
+          "y": 40,
+          "w": 140,
+          "h": 500
+        },
+        {
+          "id": "ndfvkhndnevr3",
+          "el": "elcgzsbggevr6",
+          "x": 420,
+          "y": 40,
+          "w": 190,
+          "h": 500
+        },
+        {
+          "id": "ndokahy5ievr3",
+          "el": "elj3wvfguevr7",
+          "x": 640,
+          "y": 40,
+          "w": 150,
+          "h": 500
+        },
+        {
+          "id": "nd977za7mevr3",
+          "el": "elqpkzoxeevr7",
+          "x": 820,
+          "y": 40,
+          "w": 150,
+          "h": 500
+        },
+        {
+          "id": "ndyi9l38xevr3",
+          "el": "elij9hyywevr7",
+          "x": 1020,
+          "y": 210,
+          "w": 210,
+          "h": 90
+        }
+      ],
+      "links": [
+        {
+          "id": "lnm8a2r9hevr3",
+          "rel": "rllh1dwkqevr7",
+          "style": "direct",
+          "y": 125
+        },
+        {
+          "id": "lnng85p20evr3",
+          "rel": "rlapaz2woevr7",
+          "style": "direct",
+          "y": 160
+        },
+        {
+          "id": "ln41m0sq4evr3",
+          "rel": "rloxawa24evr7",
+          "style": "direct",
+          "y": 195
+        },
+        {
+          "id": "lnlmlunkmevr3",
+          "rel": "rlipbntjxevr7",
+          "style": "direct",
+          "y": 235
+        },
+        {
+          "id": "lnvu3tn47evr3",
+          "rel": "rlq5wkkkaevr7",
+          "style": "direct",
+          "y": 280
+        },
+        {
+          "id": "lnw42uc8yevr3",
+          "rel": "rliw28mx9evr8",
+          "style": "direct",
+          "y": 320
+        },
+        {
+          "id": "lnybfmo5fevr3",
+          "rel": "rlt263w7hevr8",
+          "style": "direct",
+          "y": 355
+        },
+        {
+          "id": "lnzowpmk8evr3",
+          "rel": "rlaz2kez5evr8",
+          "style": "direct",
+          "y": 390
+        },
+        {
+          "id": "lnxj5mzjeevr3",
+          "rel": "rliyn0s1wevr8",
+          "style": "direct",
+          "y": 430
+        },
+        {
+          "id": "ln6lyhwq0evr3",
+          "rel": "rlg0w0uwgevr8",
+          "style": "direct",
+          "y": 465
+        }
+      ]
+    }
+  },
+  "elements": {
+    "elkdtmqy3evr1": {
+      "id": "elkdtmqy3evr1",
+      "type": "class",
+      "name": "User",
+      "stereotype": "",
+      "doc": "role: NON_MUSLIM | NEW_MUSLIM | DIALOGIST | ISLAMIC_INSTRUCTOR | SUPERVISOR | ADMINISTRATOR. Staff accounts (supervisor, dialogist, instructor, administrator) are created by an administrator.",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": true,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "at21n1uebevr2",
+          "vis": "-",
+          "name": "userId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atq49jc3yevr2",
+          "vis": "-",
+          "name": "firstName",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atrzgibh6evr2",
+          "vis": "-",
+          "name": "surname",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at7b011maevr2",
+          "vis": "-",
+          "name": "dateOfBirth",
+          "type": "date",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atwfqilv1evr2",
+          "vis": "-",
+          "name": "email",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": true
+        },
+        {
+          "id": "at8w45ykyevr2",
+          "vis": "-",
+          "name": "passwordHash",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atdw53rz8evr2",
+          "vis": "-",
+          "name": "isEmailVerified",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atv55lz40evr9",
+          "vis": "-",
+          "name": "role",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atizhj6bwevr9",
+          "vis": "-",
+          "name": "isActive",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "attd7gtsgevr9",
+          "vis": "-",
+          "name": "verificationCode",
+          "type": "str",
+          "mult": "0..1",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "opuqlhdxxevr2",
+          "vis": "+",
+          "name": "calculateAge",
+          "params": "",
+          "ret": "int",
+          "isStatic": false,
+          "isAbstract": true,
+          "doc": ""
+        },
+        {
+          "id": "opz5jk9wxevr2",
+          "vis": "+",
+          "name": "verifyEmail",
+          "params": "code: str",
+          "ret": "bool",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opu55swaaevr2",
+          "vis": "+",
+          "name": "login",
+          "params": "email: str, password: str",
+          "ret": "bool",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "op2qdpyamevr2",
+          "vis": "+",
+          "name": "resetPassword",
+          "params": "newPassword: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elwndhp74evr1": {
+      "id": "elwndhp74evr1",
+      "type": "class",
+      "name": "Administrator",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [],
+      "ops": [
+        {
+          "id": "opbp3oe07evr2",
+          "vis": "+",
+          "name": "manageAccount",
+          "params": "userId: str, action: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "optswrilyevr2",
+          "vis": "+",
+          "name": "assignRole",
+          "params": "userId: str, role: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opj2stry3evr9",
+          "vis": "+",
+          "name": "createStaffAccount",
+          "params": "role: str, name: str, email: str",
+          "ret": "User",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opalzvvmsevr9",
+          "vis": "+",
+          "name": "uploadIslamicResource",
+          "params": "title: str, resourceType: str, fileUrl: str",
+          "ret": "IslamicResource",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "el7ql6w0zevr1": {
+      "id": "el7ql6w0zevr1",
+      "type": "class",
+      "name": "Supervisor",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [],
+      "ops": [
+        {
+          "id": "opiy6amp5evr2",
+          "vis": "+",
+          "name": "approveEducationalContent",
+          "params": "contentId: str",
+          "ret": "bool",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opukem4weevr2",
+          "vis": "+",
+          "name": "approveQuickMessage",
+          "params": "templateId: str",
+          "ret": "bool",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opur7ghbaevr2",
+          "vis": "+",
+          "name": "superviseStaff",
+          "params": "",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "op1xhkr6gevr2",
+          "vis": "+",
+          "name": "viewDataReadOnly",
+          "params": "",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elfr1eguaevr1": {
+      "id": "elfr1eguaevr1",
+      "type": "class",
+      "name": "Dialogist",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "at262beyvevr2",
+          "vis": "-",
+          "name": "specialization",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "op6j8nnebevr9",
+          "vis": "+",
+          "name": "viewUnansweredQuestions",
+          "params": "",
+          "ret": "list[Conversation]",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "op826kp1eevr9",
+          "vis": "+",
+          "name": "acceptConversation",
+          "params": "conversationId: str",
+          "ret": "bool",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "op0een8ogevr9",
+          "vis": "+",
+          "name": "createQuickMessage",
+          "params": "shortcut: str, text: str",
+          "ret": "PredefinedMessage",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opi5qn9ooevr9",
+          "vis": "+",
+          "name": "sendQuickMessage",
+          "params": "templateId: str",
+          "ret": "Message",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "oprfbw05cevr9",
+          "vis": "+",
+          "name": "validateShahadah",
+          "params": "submissionId: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opb758r05evr9",
+          "vis": "+",
+          "name": "rejectShahadah",
+          "params": "submissionId: str, note: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elklc6kykevr1": {
+      "id": "elklc6kykevr1",
+      "type": "class",
+      "name": "IslamicInstructor",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atx3lgk9revr2",
+          "vis": "-",
+          "name": "academicDegree",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "op5241pfuevr2",
+          "vis": "+",
+          "name": "createLearningContent",
+          "params": "title: str, lessonNumber: int",
+          "ret": "LearningContent",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opez7mxp9evr2",
+          "vis": "+",
+          "name": "submitContentForApproval",
+          "params": "contentId: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opyj8qhchevr2",
+          "vis": "+",
+          "name": "monitorStudentProgress",
+          "params": "newMuslimId: str",
+          "ret": "LearningProgress",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elrxrsc3oevr1": {
+      "id": "elrxrsc3oevr1",
+      "type": "class",
+      "name": "NonMuslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "at7o1zyzbevr2",
+          "vis": "-",
+          "name": "chosenLanguage",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "op6uw3yngevr2",
+          "vis": "+",
+          "name": "startDiscussion",
+          "params": "",
+          "ret": "Conversation",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "optsv858vevr2",
+          "vis": "+",
+          "name": "selectOption",
+          "params": "option: int",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opg4n7158evr2",
+          "vis": "+",
+          "name": "submitShahadahByVoiceNote",
+          "params": "audioUrl: str",
+          "ret": "Shahadah",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "el2aqmxzrevr1": {
+      "id": "el2aqmxzrevr1",
+      "type": "class",
+      "name": "NewMuslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atg61in9kevr2",
+          "vis": "-",
+          "name": "nationality",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atkwmlutdevr2",
+          "vis": "-",
+          "name": "gender",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atmpybd54evr2",
+          "vis": "-",
+          "name": "phoneNumber",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at32hjctgevr2",
+          "vis": "-",
+          "name": "conversionDate",
+          "type": "date",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atexudcacevr9",
+          "vis": "-",
+          "name": "language",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "op9a8kcsoevr2",
+          "vis": "+",
+          "name": "updateProfile",
+          "params": "nationality: str, gender: str, phone: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "oppfhrmxgevr2",
+          "vis": "+",
+          "name": "accessLearningPath",
+          "params": "",
+          "ret": "LearningProgress",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "oppnw0yojevr2",
+          "vis": "+",
+          "name": "downloadCertificate",
+          "params": "",
+          "ret": "Certificate",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opw60kdk4evr9",
+          "vis": "+",
+          "name": "openConversation",
+          "params": "",
+          "ret": "Conversation",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "ellpgzuo7evr1": {
+      "id": "ellpgzuo7evr1",
+      "type": "class",
+      "name": "Conversation",
+      "stereotype": "",
+      "doc": "A conversation is never closed: the user (Non-Muslim or New Muslim) can come back to it at any time. status: UNASSIGNED | ASSIGNED. A conversation is assigned to only one dialogist.",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atb4g61omevr2",
+          "vis": "-",
+          "name": "conversationId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atqq05uthevr2",
+          "vis": "-",
+          "name": "status",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atl1yti4uevr2",
+          "vis": "-",
+          "name": "language",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at4v8rxi2evr2",
+          "vis": "-",
+          "name": "assignedAt",
+          "type": "datetime",
+          "mult": "0..1",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "opsock1lnevr2",
+          "vis": "+",
+          "name": "startConversation",
+          "params": "",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opgp6e9r6evr2",
+          "vis": "+",
+          "name": "sendAutoReply",
+          "params": "",
+          "ret": "Message",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elhqgbudhevr1": {
+      "id": "elhqgbudhevr1",
+      "type": "class",
+      "name": "Message",
+      "stereotype": "",
+      "doc": "messageType: TEXT | VOICE | QUICK_REPLY | SYSTEM",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "ati9xwdk0evr2",
+          "vis": "-",
+          "name": "messageId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atd88f7mxevr2",
+          "vis": "-",
+          "name": "senderId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atr18g3cievr2",
+          "vis": "-",
+          "name": "content",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atoieh4whevr2",
+          "vis": "-",
+          "name": "sentAt",
+          "type": "datetime",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at9ocx1mvevr2",
+          "vis": "-",
+          "name": "messageType",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "ati1yzlc9evr2",
+          "vis": "-",
+          "name": "isSystemMessage",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "opkvs7fv5evr2",
+          "vis": "+",
+          "name": "send",
+          "params": "",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "op5tumrwwevr2",
+          "vis": "+",
+          "name": "markAsRead",
+          "params": "",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "el3aem1qxevr1": {
+      "id": "el3aem1qxevr1",
+      "type": "class",
+      "name": "PredefinedMessage",
+      "stereotype": "",
+      "doc": "Created by a dialogist (committee of dialogists), approved by a supervisor. Before approval only the author can use it; once approved it is available to ALL dialogists, including new accounts.",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atj7o3b03evr2",
+          "vis": "-",
+          "name": "templateId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "ateea0rzsevr9",
+          "vis": "-",
+          "name": "shortcut",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": true
+        },
+        {
+          "id": "atug7c9jkevr2",
+          "vis": "-",
+          "name": "category",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atp9koaz5evr2",
+          "vis": "-",
+          "name": "contentText",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atc4g1bfbevr2",
+          "vis": "-",
+          "name": "isApproved",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": []
+    },
+    "elmdrp0elevr2": {
+      "id": "elmdrp0elevr2",
+      "type": "class",
+      "name": "Shahadah",
+      "stereotype": "",
+      "doc": "validationStatus: PENDING | VALIDATED | REJECTED. Validate / Reject buttons are shown to the dialogist under the voice note.",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atvro39lvevr2",
+          "vis": "-",
+          "name": "submissionId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atrwfmb56evr2",
+          "vis": "-",
+          "name": "audioUrl",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "aterslas0evr2",
+          "vis": "-",
+          "name": "submittedAt",
+          "type": "datetime",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atg9j7w67evr2",
+          "vis": "-",
+          "name": "validationStatus",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at5os6uqvevr2",
+          "vis": "-",
+          "name": "feedbackNote",
+          "type": "str",
+          "mult": "0..1",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atjlbcdkbevr9",
+          "vis": "-",
+          "name": "reviewedAt",
+          "type": "datetime",
+          "mult": "0..1",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "opax9a82qevr9",
+          "vis": "+",
+          "name": "validate",
+          "params": "",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opzltrix9evr9",
+          "vis": "+",
+          "name": "reject",
+          "params": "note: str",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "el3tnhttdevr2": {
+      "id": "el3tnhttdevr2",
+      "type": "class",
+      "name": "LearningContent",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "ats1ustbtevr2",
+          "vis": "-",
+          "name": "learningId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atsr2o0qvevr2",
+          "vis": "-",
+          "name": "title",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "aty03gxkhevr2",
+          "vis": "-",
+          "name": "lessonNumber",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atgvtn3p8evr2",
+          "vis": "-",
+          "name": "formatType",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atjkt2ie8evr2",
+          "vis": "-",
+          "name": "description",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "aty91qbtsevr2",
+          "vis": "-",
+          "name": "isApproved",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at4xuobcbevr9",
+          "vis": "-",
+          "name": "language",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "op006q8xqevr2",
+          "vis": "+",
+          "name": "displayContent",
+          "params": "",
+          "ret": "str",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elnbg5lzdevr2": {
+      "id": "elnbg5lzdevr2",
+      "type": "class",
+      "name": "Quiz",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "athxtfya7evr2",
+          "vis": "-",
+          "name": "quizId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atdgf4smvevr2",
+          "vis": "-",
+          "name": "totalQuestion",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at9pb1fn1evr2",
+          "vis": "-",
+          "name": "passingScorePercentage",
+          "type": "float",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "openvkkstevr2",
+          "vis": "+",
+          "name": "startQuiz",
+          "params": "",
+          "ret": "QuizAttempt",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opq1ef3qievr2",
+          "vis": "+",
+          "name": "submitQuiz",
+          "params": "",
+          "ret": "float",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elzydashsevr2": {
+      "id": "elzydashsevr2",
+      "type": "class",
+      "name": "FinalExam",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "ato5ptvphevr2",
+          "vis": "-",
+          "name": "examId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "at4hvydytevr2",
+          "vis": "-",
+          "name": "totalQuestion",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atz572879evr2",
+          "vis": "-",
+          "name": "passingScorePercentage",
+          "type": "float",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "opr8n5q2xevr2",
+          "vis": "+",
+          "name": "startFinalExam",
+          "params": "",
+          "ret": "FinalAttempt",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opozxl0slevr2",
+          "vis": "+",
+          "name": "submitFinalExam",
+          "params": "",
+          "ret": "float",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elbl37qr2evr2": {
+      "id": "elbl37qr2evr2",
+      "type": "class",
+      "name": "Question",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atip7j5fvevr2",
+          "vis": "-",
+          "name": "questionId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "at0zqxchoevr2",
+          "vis": "-",
+          "name": "prompt",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atc1zxtfcevr2",
+          "vis": "-",
+          "name": "options",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at6gn4e3levr2",
+          "vis": "-",
+          "name": "correctOptionIndex",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": []
+    },
+    "el10c6b8aevr2": {
+      "id": "el10c6b8aevr2",
+      "type": "class",
+      "name": "LearningProgress",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atkl9nrwtevr2",
+          "vis": "-",
+          "name": "progressId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atbgs7zopevr2",
+          "vis": "-",
+          "name": "completedLessonsCount",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at2ppt261evr2",
+          "vis": "-",
+          "name": "passedQuizzesCount",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atb8oy6saevr2",
+          "vis": "-",
+          "name": "finalExamPassed",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at1771zg2evr9",
+          "vis": "-",
+          "name": "isFinalExamUnlocked",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "opj0yc5k1evr2",
+          "vis": "+",
+          "name": "updateProgress",
+          "params": "",
+          "ret": "None",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        },
+        {
+          "id": "opmmbczt7evr2",
+          "vis": "+",
+          "name": "checkFinalExamEligibility",
+          "params": "",
+          "ret": "bool",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "elj1hwz5oevr2": {
+      "id": "elj1hwz5oevr2",
+      "type": "class",
+      "name": "QuizAttempt",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "at1ynzihtevr2",
+          "vis": "-",
+          "name": "attemptQuizId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atpzx36vzevr2",
+          "vis": "-",
+          "name": "attemptNumber",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at1cyxxlgevr2",
+          "vis": "-",
+          "name": "scorePercentage",
+          "type": "float",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at2jkd5svevr2",
+          "vis": "-",
+          "name": "isPassed",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atabu30f8evr2",
+          "vis": "-",
+          "name": "attemptDate",
+          "type": "datetime",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": []
+    },
+    "el79ugrj5evr2": {
+      "id": "el79ugrj5evr2",
+      "type": "class",
+      "name": "FinalAttempt",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "at754hctkevr2",
+          "vis": "-",
+          "name": "attemptFinalId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "at4rbdgl4evr2",
+          "vis": "-",
+          "name": "attemptNumber",
+          "type": "int",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atem6x7ocevr2",
+          "vis": "-",
+          "name": "scorePercentage",
+          "type": "float",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atl9wcd5kevr2",
+          "vis": "-",
+          "name": "isPassed",
+          "type": "bool",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atxrhwwjhevr2",
+          "vis": "-",
+          "name": "attemptDate",
+          "type": "datetime",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": []
+    },
+    "el30zqzarevr2": {
+      "id": "el30zqzarevr2",
+      "type": "class",
+      "name": "Certificate",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "at24ph842evr2",
+          "vis": "-",
+          "name": "certificateId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atytkgq5eevr2",
+          "vis": "-",
+          "name": "issueDate",
+          "type": "date",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atli957nfevr2",
+          "vis": "-",
+          "name": "certificateNumber",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": true
+        },
+        {
+          "id": "atla94lcbevr2",
+          "vis": "-",
+          "name": "pdfUrl",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": [
+        {
+          "id": "opkn0n8d7evr2",
+          "vis": "+",
+          "name": "generateCertificate",
+          "params": "",
+          "ret": "str",
+          "isStatic": false,
+          "isAbstract": false,
+          "doc": ""
+        }
+      ]
+    },
+    "el2chfjevevr2": {
+      "id": "el2chfjevevr2",
+      "type": "boundary",
+      "name": "Al Hiwar Digital Da'wah Platform",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el965y5s9evr3": {
+      "id": "el965y5s9evr3",
+      "type": "actor",
+      "name": "User",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el1gmr0knevr3": {
+      "id": "el1gmr0knevr3",
+      "type": "actor",
+      "name": "Non-Muslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el94haj9eevr3": {
+      "id": "el94haj9eevr3",
+      "type": "actor",
+      "name": "New Muslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elay4gvc6evr3": {
+      "id": "elay4gvc6evr3",
+      "type": "actor",
+      "name": "Dialogist",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elsu1vqobevr3": {
+      "id": "elsu1vqobevr3",
+      "type": "actor",
+      "name": "Islamic Instructor",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elthxj4svevr3": {
+      "id": "elthxj4svevr3",
+      "type": "actor",
+      "name": "Supervisor",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elnlguyvvevr3": {
+      "id": "elnlguyvvevr3",
+      "type": "actor",
+      "name": "Administrator",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el80j8sufevr3": {
+      "id": "el80j8sufevr3",
+      "type": "usecase",
+      "name": "Register account",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "eldqkzm9qevr3": {
+      "id": "eldqkzm9qevr3",
+      "type": "usecase",
+      "name": "Log in",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elyqk637kevr3": {
+      "id": "elyqk637kevr3",
+      "type": "usecase",
+      "name": "Manage profile",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elkk2rj5sevr4": {
+      "id": "elkk2rj5sevr4",
+      "type": "usecase",
+      "name": "Browse Islamic resources",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el47ckn4bevr4": {
+      "id": "el47ckn4bevr4",
+      "type": "usecase",
+      "name": "Engage in private dialogue",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": "dgvkxj22zevr3"
+    },
+    "elkvbg5bvevr4": {
+      "id": "elkvbg5bvevr4",
+      "type": "usecase",
+      "name": "Submit Shahadah voice note",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": "dgpjdr3kfevr4"
+    },
+    "elwj2s15devr4": {
+      "id": "elwj2s15devr4",
+      "type": "usecase",
+      "name": "Study lesson content",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el1r4zefjevr4": {
+      "id": "el1r4zefjevr4",
+      "type": "usecase",
+      "name": "Take lesson quiz",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el0djtrinevr4": {
+      "id": "el0djtrinevr4",
+      "type": "usecase",
+      "name": "Take final examination",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": "dgm0ng61cevr5"
+    },
+    "elh89hhwkevr4": {
+      "id": "elh89hhwkevr4",
+      "type": "usecase",
+      "name": "Track learning progress",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elno1pdktevr4": {
+      "id": "elno1pdktevr4",
+      "type": "usecase",
+      "name": "Obtain PDF certificate",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": "dgm0ng61cevr5"
+    },
+    "elz864ctrevr4": {
+      "id": "elz864ctrevr4",
+      "type": "usecase",
+      "name": "Verify email code",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el2gwi21xevr4": {
+      "id": "el2gwi21xevr4",
+      "type": "usecase",
+      "name": "Reset password",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elcwtq64kevr5": {
+      "id": "elcwtq64kevr5",
+      "type": "usecase",
+      "name": "View unanswered questions",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el8sind0eevr5": {
+      "id": "el8sind0eevr5",
+      "type": "usecase",
+      "name": "Accept and reply conversation",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elqw0s3doevr5": {
+      "id": "elqw0s3doevr5",
+      "type": "usecase",
+      "name": "Send predefined quick reply",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elkhvupcwevr5": {
+      "id": "elkhvupcwevr5",
+      "type": "usecase",
+      "name": "Validate Shahadah",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el0kelo0oevr5": {
+      "id": "el0kelo0oevr5",
+      "type": "usecase",
+      "name": "Create educational content",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elaaiju5revr5": {
+      "id": "elaaiju5revr5",
+      "type": "usecase",
+      "name": "Monitor student progress",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el7ql1kttevr5": {
+      "id": "el7ql1kttevr5",
+      "type": "usecase",
+      "name": "Approve educational content",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el6pzrsv8evr5": {
+      "id": "el6pzrsv8evr5",
+      "type": "usecase",
+      "name": "Approve predefined messages",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elxdgcfieevr5": {
+      "id": "elxdgcfieevr5",
+      "type": "usecase",
+      "name": "Supervise staff",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elg3g62g5evr5": {
+      "id": "elg3g62g5evr5",
+      "type": "usecase",
+      "name": "Manage users and roles",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "eloc9zu2revr6": {
+      "id": "eloc9zu2revr6",
+      "type": "usecase",
+      "name": "Manage platform content",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el0yq8ma2evr6": {
+      "id": "el0yq8ma2evr6",
+      "type": "actorLifeline",
+      "name": "visitor : NonMuslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el524bmcwevr6": {
+      "id": "el524bmcwevr6",
+      "type": "lifeline",
+      "name": "chat : Conversation",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el0fs6s96evr6": {
+      "id": "el0fs6s96evr6",
+      "type": "lifeline",
+      "name": "dialogist : Dialogist",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elmpiekfaevr6": {
+      "id": "elmpiekfaevr6",
+      "type": "lifeline",
+      "name": "shahadah : Shahadah",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elkpblpi9evr6": {
+      "id": "elkpblpi9evr6",
+      "type": "lifeline",
+      "name": "account : NewMuslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elazqcc69evr6": {
+      "id": "elazqcc69evr6",
+      "type": "note",
+      "name": "Once Shahadah pronunciation is validated, congratulation is sent and profile update converts account to NewMuslim.",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elry1mp87evr6": {
+      "id": "elry1mp87evr6",
+      "type": "actorLifeline",
+      "name": "student : NewMuslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elb8ax7t4evr6": {
+      "id": "elb8ax7t4evr6",
+      "type": "lifeline",
+      "name": "quiz : Quiz",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elcgzsbggevr6": {
+      "id": "elcgzsbggevr6",
+      "type": "lifeline",
+      "name": "progress : LearningProgress",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elj3wvfguevr7": {
+      "id": "elj3wvfguevr7",
+      "type": "lifeline",
+      "name": "exam : FinalExam",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elqpkzoxeevr7": {
+      "id": "elqpkzoxeevr7",
+      "type": "lifeline",
+      "name": "cert : Certificate",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elij9hyywevr7": {
+      "id": "elij9hyywevr7",
+      "type": "note",
+      "name": "Minimum 80% score is required to pass each 20-question quiz and the 100-question final exam (unlimited attempts).",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elgugpa6hevr7": {
+      "id": "elgugpa6hevr7",
+      "type": "actorLifeline",
+      "name": "nonMuslim : NonMuslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elqc7lm3sevr7": {
+      "id": "elqc7lm3sevr7",
+      "type": "lifeline",
+      "name": "conversation : Conversation",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elmc6mk9eevr7": {
+      "id": "elmc6mk9eevr7",
+      "type": "actorLifeline",
+      "name": "dialogist : Dialogist",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elbxxqjz9evr9": {
+      "id": "elbxxqjz9evr9",
+      "type": "class",
+      "name": "IslamicResource",
+      "stereotype": "",
+      "doc": "Videos, audios, images and documents uploaded by an administrator. Any visitor can access them without an account.",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null,
+      "abstract": false,
+      "persistent": true,
+      "attrs": [
+        {
+          "id": "atbit0h2revr9",
+          "vis": "-",
+          "name": "resourceId",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": true,
+          "unique": false
+        },
+        {
+          "id": "atmncnz1hevr9",
+          "vis": "-",
+          "name": "title",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atshx7qakevr9",
+          "vis": "-",
+          "name": "description",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "ator2l57uevr9",
+          "vis": "-",
+          "name": "resourceType",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "at17f4kalevr9",
+          "vis": "-",
+          "name": "fileUrl",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        },
+        {
+          "id": "atx5q936fevr9",
+          "vis": "-",
+          "name": "language",
+          "type": "str",
+          "mult": "",
+          "def": "",
+          "isStatic": false,
+          "pk": false,
+          "unique": false
+        }
+      ],
+      "ops": []
+    },
+    "el23ygs3vevr9": {
+      "id": "el23ygs3vevr9",
+      "type": "note",
+      "name": "Conversion keeps the SAME account (same userId): after a validated Shahadah and the profile update, a NonMuslim becomes a NewMuslim. The conversation and its messages are kept.",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null
+    },
+    "elvf6ibfnevr9": {
+      "id": "elvf6ibfnevr9",
+      "type": "note",
+      "name": "A conversation is never closed. It stays available to the user after conversion. status: UNASSIGNED | ASSIGNED. Only one dialogist per conversation.",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null
+    },
+    "elfxuru1kevr9": {
+      "id": "elfxuru1kevr9",
+      "type": "note",
+      "name": "Predefined messages: created by a dialogist (with a shortcut) and approved by a supervisor. Before approval only the author can use them; once approved they are available to ALL dialogists, including new accounts.",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null
+    },
+    "el2dhgmmcevr9": {
+      "id": "el2dhgmmcevr9",
+      "type": "note",
+      "name": "Validate / Reject buttons appear under the voice note in the conversation. validationStatus: PENDING | VALIDATED | REJECTED. Only the dialogist assigned to the conversation can validate or reject. After a rejection the user sends a new voice note (new Shahadah).",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null
+    },
+    "el65us60qevr9": {
+      "id": "el65us60qevr9",
+      "type": "note",
+      "name": "The supervisor supervises dialogists and Islamic instructors (superviseStaff). Staff accounts are created only by an administrator.",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pk3irpm2fevr2",
+      "link": null
+    },
+    "el08f0alrevr9": {
+      "id": "el08f0alrevr9",
+      "type": "actor",
+      "name": "Visitor",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elqxqsxlaevr9": {
+      "id": "elqxqsxlaevr9",
+      "type": "usecase",
+      "name": "Complete profile and become New Muslim",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elnd5198sevr9": {
+      "id": "elnd5198sevr9",
+      "type": "usecase",
+      "name": "Check age (18+)",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el5b3bchievr9": {
+      "id": "el5b3bchievr9",
+      "type": "usecase",
+      "name": "Choose discussion language",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elpkfo0ufevr9": {
+      "id": "elpkfo0ufevr9",
+      "type": "usecase",
+      "name": "Create predefined message",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elwhuwy7jevr9": {
+      "id": "elwhuwy7jevr9",
+      "type": "usecase",
+      "name": "Submit content for approval",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "eluub15eqevr9": {
+      "id": "eluub15eqevr9",
+      "type": "usecase",
+      "name": "Create staff accounts",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "els6zyhxsevr9": {
+      "id": "els6zyhxsevr9",
+      "type": "usecase",
+      "name": "View platform content (read-only)",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elj9fd8qwevr9": {
+      "id": "elj9fd8qwevr9",
+      "type": "usecase",
+      "name": "Reject Shahadah and request new voice note",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elwh3segsevr9": {
+      "id": "elwh3segsevr9",
+      "type": "usecase",
+      "name": "Send congratulation message",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elhi8twyvevr9": {
+      "id": "elhi8twyvevr9",
+      "type": "usecase",
+      "name": "Upload Islamic resources",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elvbtdcl3evr9": {
+      "id": "elvbtdcl3evr9",
+      "type": "boundary",
+      "name": "Al Hiwar Digital Da'wah Platform",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "el8dx6aq4evr9": {
+      "id": "el8dx6aq4evr9",
+      "type": "actor",
+      "name": "User",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elkg2i33fevr9": {
+      "id": "elkg2i33fevr9",
+      "type": "note",
+      "name": "Every staff role inherits from User, so it also has Log in, Reset password and Manage profile (see the diagram \"Visitors and users\").",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elfhko2zvevr9": {
+      "id": "elfhko2zvevr9",
+      "type": "lifeline",
+      "name": "question : Message",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elosjsohievr9": {
+      "id": "elosjsohievr9",
+      "type": "lifeline",
+      "name": "reply : Message",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "ell79ccffevr9": {
+      "id": "ell79ccffevr9",
+      "type": "note",
+      "name": "If no dialogist replies within 2 minutes, Conversation.sendAutoReply sends an automatic message (no specialist available). The conversation stays UNASSIGNED and open until a dialogist accepts it.",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    },
+    "elonqjmxpevr9": {
+      "id": "elonqjmxpevr9",
+      "type": "note",
+      "name": "acceptConversation assigns the conversation to the first dialogist only; if it is already ASSIGNED it returns false. A quick reply must be based on an approved PredefinedMessage (or one created by this dialogist). The conversation is never closed: a New Muslim reuses it later (openConversation).",
+      "stereotype": "",
+      "doc": "",
+      "pkgId": "pkagyf3dgevr1",
+      "link": null
+    }
+  },
+  "relations": {
+    "rlve3fdklevr1": {
+      "id": "rlve3fdklevr1",
+      "type": "generalization",
+      "src": "elwndhp74evr1",
+      "tgt": "elkdtmqy3evr1",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rln4o8hw2evr1": {
+      "id": "rln4o8hw2evr1",
+      "type": "generalization",
+      "src": "el7ql6w0zevr1",
+      "tgt": "elkdtmqy3evr1",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlo67cdn8evr1": {
+      "id": "rlo67cdn8evr1",
+      "type": "generalization",
+      "src": "elfr1eguaevr1",
+      "tgt": "elkdtmqy3evr1",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rls8orp8uevr1": {
+      "id": "rls8orp8uevr1",
+      "type": "generalization",
+      "src": "elklc6kykevr1",
+      "tgt": "elkdtmqy3evr1",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rljgrwafuevr1": {
+      "id": "rljgrwafuevr1",
+      "type": "generalization",
+      "src": "elrxrsc3oevr1",
+      "tgt": "elkdtmqy3evr1",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlsllpbmbevr1": {
+      "id": "rlsllpbmbevr1",
+      "type": "generalization",
+      "src": "el2aqmxzrevr1",
+      "tgt": "elkdtmqy3evr1",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl8ex13czevr1": {
+      "id": "rl8ex13czevr1",
+      "type": "dependency",
+      "src": "elrxrsc3oevr1",
+      "tgt": "el2aqmxzrevr1",
+      "name": "converts to",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlv1zctytevr1": {
+      "id": "rlv1zctytevr1",
+      "type": "association",
+      "src": "ellpgzuo7evr1",
+      "tgt": "elkdtmqy3evr1",
+      "name": "",
+      "srcMult": "0..1",
+      "tgtMult": "1",
+      "srcRole": "conversations",
+      "tgtRole": "participant",
+      "doc": ""
+    },
+    "rlx1w840wevr1": {
+      "id": "rlx1w840wevr1",
+      "type": "association",
+      "src": "ellpgzuo7evr1",
+      "tgt": "elfr1eguaevr1",
+      "name": "",
+      "srcMult": "0..*",
+      "tgtMult": "0..1",
+      "srcRole": "conversations",
+      "tgtRole": "dialogist",
+      "doc": ""
+    },
+    "rlyyzpwt0evr1": {
+      "id": "rlyyzpwt0evr1",
+      "type": "composition",
+      "src": "elhqgbudhevr1",
+      "tgt": "ellpgzuo7evr1",
+      "name": "",
+      "srcMult": "1..*",
+      "tgtMult": "1",
+      "srcRole": "messages",
+      "tgtRole": "conversation",
+      "doc": ""
+    },
+    "rlox2o3zbevr2": {
+      "id": "rlox2o3zbevr2",
+      "type": "association",
+      "src": "elmdrp0elevr2",
+      "tgt": "elrxrsc3oevr1",
+      "name": "",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "shahadahRecordings",
+      "tgtRole": "applicant",
+      "doc": ""
+    },
+    "rlj1sljb2evr2": {
+      "id": "rlj1sljb2evr2",
+      "type": "association",
+      "src": "elmdrp0elevr2",
+      "tgt": "elfr1eguaevr1",
+      "name": "",
+      "srcMult": "0..*",
+      "tgtMult": "0..1",
+      "srcRole": "reviewedShahadahs",
+      "tgtRole": "reviewer",
+      "doc": ""
+    },
+    "rlaeydr7nevr2": {
+      "id": "rlaeydr7nevr2",
+      "type": "composition",
+      "src": "elnbg5lzdevr2",
+      "tgt": "el3tnhttdevr2",
+      "name": "",
+      "srcMult": "1",
+      "tgtMult": "1",
+      "srcRole": "quiz",
+      "tgtRole": "lesson",
+      "doc": ""
+    },
+    "rlhog0zr6evr2": {
+      "id": "rlhog0zr6evr2",
+      "type": "composition",
+      "src": "elbl37qr2evr2",
+      "tgt": "elnbg5lzdevr2",
+      "name": "",
+      "srcMult": "20",
+      "tgtMult": "1",
+      "srcRole": "questions",
+      "tgtRole": "quiz",
+      "doc": ""
+    },
+    "rljs1nbdqevr2": {
+      "id": "rljs1nbdqevr2",
+      "type": "composition",
+      "src": "elbl37qr2evr2",
+      "tgt": "elzydashsevr2",
+      "name": "",
+      "srcMult": "100",
+      "tgtMult": "1",
+      "srcRole": "questions",
+      "tgtRole": "exam",
+      "doc": ""
+    },
+    "rlls53pb2evr2": {
+      "id": "rlls53pb2evr2",
+      "type": "association",
+      "src": "elj1hwz5oevr2",
+      "tgt": "elnbg5lzdevr2",
+      "name": "",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "attempts",
+      "tgtRole": "quiz",
+      "doc": ""
+    },
+    "rlp6r93xyevr3": {
+      "id": "rlp6r93xyevr3",
+      "type": "association",
+      "src": "el79ugrj5evr2",
+      "tgt": "elzydashsevr2",
+      "name": "",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "attempts",
+      "tgtRole": "finalExam",
+      "doc": ""
+    },
+    "rlhtz6xuaevr3": {
+      "id": "rlhtz6xuaevr3",
+      "type": "association",
+      "src": "el10c6b8aevr2",
+      "tgt": "el2aqmxzrevr1",
+      "name": "",
+      "srcMult": "1",
+      "tgtMult": "1",
+      "srcRole": "learningProgress",
+      "tgtRole": "student",
+      "doc": ""
+    },
+    "rld2om90gevr3": {
+      "id": "rld2om90gevr3",
+      "type": "association",
+      "src": "elj1hwz5oevr2",
+      "tgt": "el10c6b8aevr2",
+      "name": "",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "quizAttempts",
+      "tgtRole": "progress",
+      "doc": ""
+    },
+    "rlnidsc9ievr3": {
+      "id": "rlnidsc9ievr3",
+      "type": "association",
+      "src": "el79ugrj5evr2",
+      "tgt": "el10c6b8aevr2",
+      "name": "",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "finalAttempts",
+      "tgtRole": "progress",
+      "doc": ""
+    },
+    "rlo8m9ktzevr3": {
+      "id": "rlo8m9ktzevr3",
+      "type": "association",
+      "src": "el30zqzarevr2",
+      "tgt": "el2aqmxzrevr1",
+      "name": "",
+      "srcMult": "0..1",
+      "tgtMult": "1",
+      "srcRole": "certificate",
+      "tgtRole": "recipient",
+      "doc": ""
+    },
+    "rll2nqwryevr3": {
+      "id": "rll2nqwryevr3",
+      "type": "dependency",
+      "src": "el30zqzarevr2",
+      "tgt": "el10c6b8aevr2",
+      "name": "depends on",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlcxy6ekfevr6": {
+      "id": "rlcxy6ekfevr6",
+      "type": "message",
+      "src": "el0yq8ma2evr6",
+      "tgt": "el524bmcwevr6",
+      "name": "startDiscussion",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "language"
+    },
+    "rlitgm9zsevr6": {
+      "id": "rlitgm9zsevr6",
+      "type": "message",
+      "src": "el524bmcwevr6",
+      "tgt": "el0yq8ma2evr6",
+      "name": "welcomeAndOptions",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "return",
+      "args": ""
+    },
+    "rlkt3lhi4evr6": {
+      "id": "rlkt3lhi4evr6",
+      "type": "message",
+      "src": "el0yq8ma2evr6",
+      "tgt": "el524bmcwevr6",
+      "name": "selectOption",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "2 (Embrace Islam)"
+    },
+    "rlvlnv66nevr6": {
+      "id": "rlvlnv66nevr6",
+      "type": "message",
+      "src": "el0fs6s96evr6",
+      "tgt": "el524bmcwevr6",
+      "name": "acceptConversation",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "chatId"
+    },
+    "rlq7efslaevr6": {
+      "id": "rlq7efslaevr6",
+      "type": "message",
+      "src": "el0yq8ma2evr6",
+      "tgt": "elmpiekfaevr6",
+      "name": "submitShahadahByVoiceNote",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "audioUrl"
+    },
+    "rlxh9whwievr6": {
+      "id": "rlxh9whwievr6",
+      "type": "message",
+      "src": "elmpiekfaevr6",
+      "tgt": "el0fs6s96evr6",
+      "name": "notifySubmission",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "async",
+      "args": "submissionId"
+    },
+    "rlzmqxoe4evr7": {
+      "id": "rlzmqxoe4evr7",
+      "type": "message",
+      "src": "el0fs6s96evr6",
+      "tgt": "elmpiekfaevr6",
+      "name": "validate",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "True, note"
+    },
+    "rlack2wlkevr7": {
+      "id": "rlack2wlkevr7",
+      "type": "message",
+      "src": "el0fs6s96evr6",
+      "tgt": "el524bmcwevr6",
+      "name": "sendQuickMessage",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "congratulationId"
+    },
+    "rlx8homjmevr7": {
+      "id": "rlx8homjmevr7",
+      "type": "message",
+      "src": "el524bmcwevr6",
+      "tgt": "el0yq8ma2evr6",
+      "name": "promptProfileUpdate",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "async",
+      "args": "nationality, gender, phone"
+    },
+    "rlwen3raqevr7": {
+      "id": "rlwen3raqevr7",
+      "type": "message",
+      "src": "el0yq8ma2evr6",
+      "tgt": "elkpblpi9evr6",
+      "name": "«create» updateProfile",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "nationality, gender, phone"
+    },
+    "rluann5ubevr7": {
+      "id": "rluann5ubevr7",
+      "type": "message",
+      "src": "elkpblpi9evr6",
+      "tgt": "el0yq8ma2evr6",
+      "name": "newMuslimAccount",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "return",
+      "args": ""
+    },
+    "rllh1dwkqevr7": {
+      "id": "rllh1dwkqevr7",
+      "type": "message",
+      "src": "elry1mp87evr6",
+      "tgt": "elb8ax7t4evr6",
+      "name": "submitQuiz",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "answers"
+    },
+    "rlapaz2woevr7": {
+      "id": "rlapaz2woevr7",
+      "type": "message",
+      "src": "elb8ax7t4evr6",
+      "tgt": "elry1mp87evr6",
+      "name": "scorePercentage",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "return",
+      "args": ">= 80%"
+    },
+    "rloxawa24evr7": {
+      "id": "rloxawa24evr7",
+      "type": "message",
+      "src": "elb8ax7t4evr6",
+      "tgt": "elcgzsbggevr6",
+      "name": "updateProgress",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "passedQuizzesCount = 7"
+    },
+    "rlipbntjxevr7": {
+      "id": "rlipbntjxevr7",
+      "type": "message",
+      "src": "elcgzsbggevr6",
+      "tgt": "elcgzsbggevr6",
+      "name": "checkFinalExamEligibility",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "all 7 quizzes passed"
+    },
+    "rlq5wkkkaevr7": {
+      "id": "rlq5wkkkaevr7",
+      "type": "message",
+      "src": "elcgzsbggevr6",
+      "tgt": "elj3wvfguevr7",
+      "name": "unlockFinalExam",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "isUnlocked = True"
+    },
+    "rliw28mx9evr8": {
+      "id": "rliw28mx9evr8",
+      "type": "message",
+      "src": "elry1mp87evr6",
+      "tgt": "elj3wvfguevr7",
+      "name": "submitFinalExam",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "answers (100 questions)"
+    },
+    "rlt263w7hevr8": {
+      "id": "rlt263w7hevr8",
+      "type": "message",
+      "src": "elj3wvfguevr7",
+      "tgt": "elry1mp87evr6",
+      "name": "examScore",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "return",
+      "args": ">= 80%"
+    },
+    "rlaz2kez5evr8": {
+      "id": "rlaz2kez5evr8",
+      "type": "message",
+      "src": "elj3wvfguevr7",
+      "tgt": "elcgzsbggevr6",
+      "name": "recordFinalExamPassed",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "finalExamPassed = True"
+    },
+    "rliyn0s1wevr8": {
+      "id": "rliyn0s1wevr8",
+      "type": "message",
+      "src": "elcgzsbggevr6",
+      "tgt": "elqpkzoxeevr7",
+      "name": "«create» generateCertificate",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "fullName, birthDate, nationality"
+    },
+    "rlg0w0uwgevr8": {
+      "id": "rlg0w0uwgevr8",
+      "type": "message",
+      "src": "elqpkzoxeevr7",
+      "tgt": "elry1mp87evr6",
+      "name": "pdfCertificate",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "return",
+      "args": "certificate.pdf"
+    },
+    "rljde6nnoevr9": {
+      "id": "rljde6nnoevr9",
+      "type": "association",
+      "src": "el3tnhttdevr2",
+      "tgt": "elklc6kykevr1",
+      "name": "authored by",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "authoredContents",
+      "tgtRole": "author",
+      "doc": ""
+    },
+    "rldtnrj5levr9": {
+      "id": "rldtnrj5levr9",
+      "type": "association",
+      "src": "el3tnhttdevr2",
+      "tgt": "el7ql6w0zevr1",
+      "name": "approved by",
+      "srcMult": "0..*",
+      "tgtMult": "0..1",
+      "srcRole": "approvedContents",
+      "tgtRole": "approver",
+      "doc": ""
+    },
+    "rlvoh7u7eevr9": {
+      "id": "rlvoh7u7eevr9",
+      "type": "association",
+      "src": "el3aem1qxevr1",
+      "tgt": "elfr1eguaevr1",
+      "name": "created by",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "createdMessages",
+      "tgtRole": "author",
+      "doc": ""
+    },
+    "rls4z3cinevr9": {
+      "id": "rls4z3cinevr9",
+      "type": "association",
+      "src": "el3aem1qxevr1",
+      "tgt": "el7ql6w0zevr1",
+      "name": "approved by",
+      "srcMult": "0..*",
+      "tgtMult": "0..1",
+      "srcRole": "approvedMessages",
+      "tgtRole": "approver",
+      "doc": ""
+    },
+    "rlcbfo9cqevr9": {
+      "id": "rlcbfo9cqevr9",
+      "type": "association",
+      "src": "elhqgbudhevr1",
+      "tgt": "el3aem1qxevr1",
+      "name": "based on",
+      "srcMult": "0..*",
+      "tgtMult": "0..1",
+      "srcRole": "messages",
+      "tgtRole": "template",
+      "doc": ""
+    },
+    "rl8u5d3nwevr9": {
+      "id": "rl8u5d3nwevr9",
+      "type": "association",
+      "src": "elmdrp0elevr2",
+      "tgt": "elhqgbudhevr1",
+      "name": "recorded as",
+      "srcMult": "0..1",
+      "tgtMult": "1",
+      "srcRole": "shahadah",
+      "tgtRole": "voiceNote",
+      "doc": ""
+    },
+    "rlazqpu86evr9": {
+      "id": "rlazqpu86evr9",
+      "type": "association",
+      "src": "el10c6b8aevr2",
+      "tgt": "el3tnhttdevr2",
+      "name": "has completed",
+      "srcMult": "0..*",
+      "tgtMult": "0..*",
+      "srcRole": "progressRecords",
+      "tgtRole": "completedLessons",
+      "doc": ""
+    },
+    "rlmn5mw6vevr9": {
+      "id": "rlmn5mw6vevr9",
+      "type": "dependency",
+      "src": "elklc6kykevr1",
+      "tgt": "el10c6b8aevr2",
+      "name": "monitors",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl3rc61m8evr9": {
+      "id": "rl3rc61m8evr9",
+      "type": "association",
+      "src": "elbxxqjz9evr9",
+      "tgt": "elwndhp74evr1",
+      "name": "uploaded by",
+      "srcMult": "0..*",
+      "tgtMult": "1",
+      "srcRole": "uploadedResources",
+      "tgtRole": "uploader",
+      "doc": ""
+    },
+    "rlmjm4nhaevr9": {
+      "id": "rlmjm4nhaevr9",
+      "type": "association",
+      "src": "el08f0alrevr9",
+      "tgt": "el80j8sufevr3",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl5t0i2b7evr9": {
+      "id": "rl5t0i2b7evr9",
+      "type": "association",
+      "src": "el08f0alrevr9",
+      "tgt": "elkk2rj5sevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlh0u3cjjevr9": {
+      "id": "rlh0u3cjjevr9",
+      "type": "include",
+      "src": "el80j8sufevr3",
+      "tgt": "elz864ctrevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl7ucscjhevr9": {
+      "id": "rl7ucscjhevr9",
+      "type": "include",
+      "src": "el80j8sufevr3",
+      "tgt": "elnd5198sevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlrym7gi2evr9": {
+      "id": "rlrym7gi2evr9",
+      "type": "association",
+      "src": "el965y5s9evr3",
+      "tgt": "eldqkzm9qevr3",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rljtom2dsevr9": {
+      "id": "rljtom2dsevr9",
+      "type": "association",
+      "src": "el965y5s9evr3",
+      "tgt": "elyqk637kevr3",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rligy9wo5evr9": {
+      "id": "rligy9wo5evr9",
+      "type": "extend",
+      "src": "el2gwi21xevr4",
+      "tgt": "eldqkzm9qevr3",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlukeiviaevr9": {
+      "id": "rlukeiviaevr9",
+      "type": "generalization",
+      "src": "el1gmr0knevr3",
+      "tgt": "el965y5s9evr3",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlqbi42ooevr9": {
+      "id": "rlqbi42ooevr9",
+      "type": "generalization",
+      "src": "el94haj9eevr3",
+      "tgt": "el965y5s9evr3",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rljgt93jsevr9": {
+      "id": "rljgt93jsevr9",
+      "type": "association",
+      "src": "el1gmr0knevr3",
+      "tgt": "el47ckn4bevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl2iaup08evr9": {
+      "id": "rl2iaup08evr9",
+      "type": "association",
+      "src": "el1gmr0knevr3",
+      "tgt": "elkvbg5bvevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlvwmjjpsevr9": {
+      "id": "rlvwmjjpsevr9",
+      "type": "association",
+      "src": "el1gmr0knevr3",
+      "tgt": "elqxqsxlaevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl9vrylwievr9": {
+      "id": "rl9vrylwievr9",
+      "type": "include",
+      "src": "el47ckn4bevr4",
+      "tgt": "el5b3bchievr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl9jh3ue2evr9": {
+      "id": "rl9jh3ue2evr9",
+      "type": "extend",
+      "src": "elkvbg5bvevr4",
+      "tgt": "el47ckn4bevr4",
+      "name": "{user wants to become Muslim}",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlsuuo0jzevr9": {
+      "id": "rlsuuo0jzevr9",
+      "type": "extend",
+      "src": "elqxqsxlaevr9",
+      "tgt": "elyqk637kevr3",
+      "name": "{Shahadah validated}",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlvb5erjcevr9": {
+      "id": "rlvb5erjcevr9",
+      "type": "association",
+      "src": "el94haj9eevr3",
+      "tgt": "el47ckn4bevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlrh9a5ojevr9": {
+      "id": "rlrh9a5ojevr9",
+      "type": "association",
+      "src": "el94haj9eevr3",
+      "tgt": "elwj2s15devr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlyty5z5wevr9": {
+      "id": "rlyty5z5wevr9",
+      "type": "association",
+      "src": "el94haj9eevr3",
+      "tgt": "el1r4zefjevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlj20w43hevr9": {
+      "id": "rlj20w43hevr9",
+      "type": "association",
+      "src": "el94haj9eevr3",
+      "tgt": "elh89hhwkevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlql80ucvevr9": {
+      "id": "rlql80ucvevr9",
+      "type": "association",
+      "src": "el94haj9eevr3",
+      "tgt": "el0djtrinevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlz3bb1leevr9": {
+      "id": "rlz3bb1leevr9",
+      "type": "association",
+      "src": "el94haj9eevr3",
+      "tgt": "elno1pdktevr4",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl3my5zocevr9": {
+      "id": "rl3my5zocevr9",
+      "type": "extend",
+      "src": "elno1pdktevr4",
+      "tgt": "el0djtrinevr4",
+      "name": "{all quizzes and final exam passed}",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlizm5ouoevr9": {
+      "id": "rlizm5ouoevr9",
+      "type": "generalization",
+      "src": "elay4gvc6evr3",
+      "tgt": "el8dx6aq4evr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl2nwzbftevr9": {
+      "id": "rl2nwzbftevr9",
+      "type": "generalization",
+      "src": "elsu1vqobevr3",
+      "tgt": "el8dx6aq4evr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl83p2rynevr9": {
+      "id": "rl83p2rynevr9",
+      "type": "generalization",
+      "src": "elthxj4svevr3",
+      "tgt": "el8dx6aq4evr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rllfzkmb1evr9": {
+      "id": "rllfzkmb1evr9",
+      "type": "generalization",
+      "src": "elnlguyvvevr3",
+      "tgt": "el8dx6aq4evr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlualg9j2evr9": {
+      "id": "rlualg9j2evr9",
+      "type": "association",
+      "src": "elay4gvc6evr3",
+      "tgt": "elcwtq64kevr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlix2d6rwevr9": {
+      "id": "rlix2d6rwevr9",
+      "type": "association",
+      "src": "elay4gvc6evr3",
+      "tgt": "el8sind0eevr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rliuzslyaevr9": {
+      "id": "rliuzslyaevr9",
+      "type": "association",
+      "src": "elay4gvc6evr3",
+      "tgt": "elpkfo0ufevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlsksveg4evr9": {
+      "id": "rlsksveg4evr9",
+      "type": "extend",
+      "src": "elqw0s3doevr5",
+      "tgt": "el8sind0eevr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlbfb3sj6evr9": {
+      "id": "rlbfb3sj6evr9",
+      "type": "extend",
+      "src": "elkhvupcwevr5",
+      "tgt": "el8sind0eevr5",
+      "name": "{voice note received}",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl6tet89tevr9": {
+      "id": "rl6tet89tevr9",
+      "type": "extend",
+      "src": "elj9fd8qwevr9",
+      "tgt": "el8sind0eevr5",
+      "name": "{voice note received}",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl4z28u3jevr9": {
+      "id": "rl4z28u3jevr9",
+      "type": "include",
+      "src": "elkhvupcwevr5",
+      "tgt": "elwh3segsevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl0shk0f5evr9": {
+      "id": "rl0shk0f5evr9",
+      "type": "association",
+      "src": "elsu1vqobevr3",
+      "tgt": "el0kelo0oevr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl78gwzoyevr9": {
+      "id": "rl78gwzoyevr9",
+      "type": "association",
+      "src": "elsu1vqobevr3",
+      "tgt": "elwhuwy7jevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlqh6ysq8evr9": {
+      "id": "rlqh6ysq8evr9",
+      "type": "association",
+      "src": "elsu1vqobevr3",
+      "tgt": "elaaiju5revr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlfqwkr6aevr9": {
+      "id": "rlfqwkr6aevr9",
+      "type": "association",
+      "src": "elthxj4svevr3",
+      "tgt": "el7ql1kttevr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlpqkrjywevr9": {
+      "id": "rlpqkrjywevr9",
+      "type": "association",
+      "src": "elthxj4svevr3",
+      "tgt": "el6pzrsv8evr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlkc41s73evr9": {
+      "id": "rlkc41s73evr9",
+      "type": "association",
+      "src": "elthxj4svevr3",
+      "tgt": "elxdgcfieevr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlsx1nithevr9": {
+      "id": "rlsx1nithevr9",
+      "type": "association",
+      "src": "elthxj4svevr3",
+      "tgt": "els6zyhxsevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlkl7f7n0evr9": {
+      "id": "rlkl7f7n0evr9",
+      "type": "association",
+      "src": "elnlguyvvevr3",
+      "tgt": "eluub15eqevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl6nqr8d7evr9": {
+      "id": "rl6nqr8d7evr9",
+      "type": "association",
+      "src": "elnlguyvvevr3",
+      "tgt": "elg3g62g5evr5",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rl1obo4irevr9": {
+      "id": "rl1obo4irevr9",
+      "type": "association",
+      "src": "elnlguyvvevr3",
+      "tgt": "elhi8twyvevr9",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlcs1o6n6evr9": {
+      "id": "rlcs1o6n6evr9",
+      "type": "association",
+      "src": "elnlguyvvevr3",
+      "tgt": "eloc9zu2revr6",
+      "name": "",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": ""
+    },
+    "rlneyrdgrevr9": {
+      "id": "rlneyrdgrevr9",
+      "type": "message",
+      "src": "elgugpa6hevr7",
+      "tgt": "elqc7lm3sevr7",
+      "name": "startDiscussion",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "language"
+    },
+    "rlvkccq0uevr9": {
+      "id": "rlvkccq0uevr9",
+      "type": "message",
+      "src": "elqc7lm3sevr7",
+      "tgt": "elqc7lm3sevr7",
+      "name": "startConversation",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "language, status = UNASSIGNED"
+    },
+    "rl347xem7evr9": {
+      "id": "rl347xem7evr9",
+      "type": "message",
+      "src": "elqc7lm3sevr7",
+      "tgt": "elgugpa6hevr7",
+      "name": "sendAutoReply",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "async",
+      "args": "welcomeMessage, option1, option2"
+    },
+    "rl20abor3evr9": {
+      "id": "rl20abor3evr9",
+      "type": "message",
+      "src": "elgugpa6hevr7",
+      "tgt": "elqc7lm3sevr7",
+      "name": "selectOption",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "1 (Know more about Islam)"
+    },
+    "rl6oq2fupevr9": {
+      "id": "rl6oq2fupevr9",
+      "type": "message",
+      "src": "elgugpa6hevr7",
+      "tgt": "elfhko2zvevr9",
+      "name": "«create» Message",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "content = questionText, messageType = TEXT"
+    },
+    "rll4zlz77evr9": {
+      "id": "rll4zlz77evr9",
+      "type": "message",
+      "src": "elfhko2zvevr9",
+      "tgt": "elfhko2zvevr9",
+      "name": "send",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": ""
+    },
+    "rlga0uiz0evr9": {
+      "id": "rlga0uiz0evr9",
+      "type": "message",
+      "src": "elqc7lm3sevr7",
+      "tgt": "elgugpa6hevr7",
+      "name": "sendAutoReply",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "async",
+      "args": "noSpecialistAvailable (after 2 min without reply)"
+    },
+    "rlahhh3b6evr9": {
+      "id": "rlahhh3b6evr9",
+      "type": "message",
+      "src": "elmc6mk9eevr7",
+      "tgt": "elqc7lm3sevr7",
+      "name": "viewUnansweredQuestions",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": ""
+    },
+    "rlpu1n8ryevr9": {
+      "id": "rlpu1n8ryevr9",
+      "type": "message",
+      "src": "elqc7lm3sevr7",
+      "tgt": "elmc6mk9eevr7",
+      "name": "unansweredList",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "return",
+      "args": "conversations with status = UNASSIGNED"
+    },
+    "rlzt767kuevr9": {
+      "id": "rlzt767kuevr9",
+      "type": "message",
+      "src": "elmc6mk9eevr7",
+      "tgt": "elqc7lm3sevr7",
+      "name": "acceptConversation",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "conversationId"
+    },
+    "rlywgufddevr9": {
+      "id": "rlywgufddevr9",
+      "type": "message",
+      "src": "elqc7lm3sevr7",
+      "tgt": "elmc6mk9eevr7",
+      "name": "assigned",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "return",
+      "args": "true (status = ASSIGNED, assignedAt)"
+    },
+    "rlw5pvammevr9": {
+      "id": "rlw5pvammevr9",
+      "type": "message",
+      "src": "elmc6mk9eevr7",
+      "tgt": "elosjsohievr9",
+      "name": "«create» sendQuickMessage",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "templateId"
+    },
+    "rlt49ltetevr9": {
+      "id": "rlt49ltetevr9",
+      "type": "message",
+      "src": "elosjsohievr9",
+      "tgt": "elosjsohievr9",
+      "name": "send",
+      "srcMult": "",
+      "tgtMult": "",
+      "srcRole": "",
+      "tgtRole": "",
+      "doc": "",
+      "kind": "sync",
+      "args": "messageType = QUICK_REPLY"
+    }
+  }
+}

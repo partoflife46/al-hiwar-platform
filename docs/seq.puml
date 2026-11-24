@@ -1,0 +1,18 @@
+@startuml
+actor NonMuslim
+participant Message
+participant Conversation
+actor Dialogist
+
+NonMuslim -> Conversation : startDiscussion()
+Conversation -> Conversation : startConversation()
+Conversation -> NonMuslim : sendAutoReply()
+NonMuslim -> Conversation : selectOption()
+NonMuslim -> Message : send()
+Conversation -> NonMuslim : sendAutoReply()
+Dialogist -> Conversation : viewUnansweredQuestions()
+Conversation --> Dialogist : unansweredList
+Dialogist -> Conversation : acceptConversation()
+Conversation --> Dialogist : assigned
+Dialogist -> Message : send()
+@enduml

@@ -1,0 +1,136 @@
+@startuml
+abstract class User {
+  calculateAge()
+  verifyEmail()
+  login()
+  resetPassword()
+}
+
+class Administrator {
+  manageAccount()
+  assignRole()
+  createStaffAccount()
+  uploadIslamicResource()
+}
+
+class Supervisor {
+  approveEducationalContent()
+  approveQuickMessage()
+  superviseStaff()
+  viewDataReadOnly()
+}
+
+class Dialogist {
+  viewUnansweredQuestions()
+  acceptConversation()
+  createQuickMessage()
+  sendQuickMessage()
+  validateShahadah()
+  rejectShahadah()
+}
+
+class IslamicInstructor {
+  createLearningContent()
+  submitContentForApproval()
+  monitorStudentProgress()
+}
+
+class NonMuslim {
+  startDiscussion()
+  selectOption()
+  submitShahadahByVoiceNote()
+}
+
+class NewMuslim {
+  updateProfile()
+  accessLearningPath()
+  downloadCertificate()
+  openConversation()
+}
+
+class Conversation {
+  startConversation()
+  sendAutoReply()
+}
+
+class Message {
+  send()
+  markAsRead()
+}
+
+class PredefinedMessage {
+}
+
+class Shahadah {
+  validate()
+  reject()
+}
+
+class LearningContent {
+  displayContent()
+}
+
+class Quiz {
+  startQuiz()
+  submitQuiz()
+}
+
+class FinalExam {
+  startFinalExam()
+  submitFinalExam()
+}
+
+class Question {
+}
+
+class LearningProgress {
+  updateProgress()
+  checkFinalExamEligibility()
+}
+
+class QuizAttempt {
+}
+
+class FinalAttempt {
+}
+
+class Certificate {
+  generateCertificate()
+}
+
+class IslamicResource {
+}
+
+User <|-- Administrator
+User <|-- Supervisor
+User <|-- Dialogist
+User <|-- IslamicInstructor
+User <|-- NonMuslim
+User <|-- NewMuslim
+
+NonMuslim ..> NewMuslim
+Conversation --> User
+Conversation --> Dialogist
+Conversation *-- Message
+Shahadah --> NonMuslim
+Shahadah --> Dialogist
+LearningContent *-- Quiz
+Quiz *-- Question
+FinalExam *-- Question
+QuizAttempt --> Quiz
+FinalAttempt --> FinalExam
+LearningProgress --> NewMuslim
+QuizAttempt --> LearningProgress
+FinalAttempt --> LearningProgress
+Certificate --> NewMuslim
+Certificate ..> LearningProgress
+LearningContent --> IslamicInstructor
+LearningContent --> Supervisor
+PredefinedMessage --> Dialogist
+PredefinedMessage --> Supervisor
+Message --> PredefinedMessage
+Shahadah --> Message
+LearningProgress --> LearningContent
+IslamicInstructor ..> LearningProgress
+IslamicResource --> Administrator
+@enduml

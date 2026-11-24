@@ -1,0 +1,17 @@
+#,Metric,Dimension,Value,Better,Source,Note
+1,Coupling Between Objects (CBO),Reusability,2.9697,lower,native,avg per class; max 19 (InMemoryDatabaseAdapter)
+2,Lack of Cohesion in Methods (LCOM),Reusability,0.4286,lower,native,CK definition; avg across 28 concrete classes (interfaces excluded); max 7 (ChatServiceImpl)
+3,Reuse Index,Reusability,66.2321,higher,native (QMOOD),raw QMOOD; use --baseline old.json to normalize
+4,Maintainability Index (MI),Maintainability,50.8862,higher,native,"0-100, mean of files; min 19.2"
+5,Cyclomatic Complexity (CC),Maintainability,5.7027,lower,native,avg per function; max 34; 132 functions > 10
+6,Defect Density,Maintainability,0,lower,native (proxy),0 security + 0 bug-pattern findings / 29505 SLOC
+7,Depth of Inheritance Tree (DIT),Extensibility,0.0909,,native,avg per class; max 1 (BadgeProps)
+8,Number of Children (NOC),Extensibility,0.0909,,native,avg per class; max 6 (User)
+9,Polymorphism Factor (PF),Extensibility,0.5696,higher,native (MOOD),"overridden / (new methods x descendants), 0..1"
+10,Structural Traceability (%),Diagram Fidelity,100,higher,diagram vs code,"classes 20/20, methods 42/42, relations 31/31; 112 code classes not in diagram"
+11,Behavioral Fidelity (%),Diagram Fidelity,100,higher,diagram vs code,"7/7 messages verified; static check, order not verified"
+12,Use Case Coverage (%),Diagram Fidelity,100,higher,usecases vs code,34/34 use cases matched (name heuristic)
+13,Architectural Compliance (1-10),Design Quality,10,higher,rules,0 violations in 59 cross-layer dependencies
+14,Security Issues Count (high),Reliability,0,lower,native,0 medium (pattern rules; not a full audit)
+15,Test Coverage (%),Reliability,42.8085,higher,report: lcov.info,lcov report
+16,Style / Readability Score,Maintainability,8.5364,higher,native,"pylint-like formula; 1090 convention, 138 refactor"

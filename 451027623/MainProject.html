@@ -1,0 +1,1563 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OODM · تقرير جودة الكود</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;600&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#00B4FF;
+  --brand-dark:#008ECC;
+  --brand-soft:#EBF8FF;
+  --brand-bd:#B3E8FF;
+  --ink-dark:#0B1628;
+  --bg:#F5FAFF;
+  --surface:#FFFFFF;
+  --surface-2:#F8FCFF;
+  --border:#E2EEF8;
+  --text:#0F172A;
+  --muted:#475569;
+  --subtle:#64748B;
+  --ex:#059669;--ex-bg:#ECFDF5;--ex-bd:#A7F3D0;
+  --gd:#008ECC;--gd-bg:#EBF8FF;--gd-bd:#99E1FF;
+  --ac:#D97706;--ac-bg:#FFFBEB;--ac-bd:#FDE68A;
+  --pr:#E11D48;--pr-bg:#FFF1F2;--pr-bd:#FECDD3;
+  --na:#64748B;--na-bg:#F1F5F9;--na-bd:#CBD5E1;
+  --pu:#7C3AED;--pu-bg:#F5F3FF;--pu-bd:#DDD6FE;
+  --radius:16px;
+  --shadow:0 2px 6px rgba(0,180,255,.05),0 8px 24px rgba(15,23,42,.04);
+  font-family:"Google Sans","Google Sans Flex","Segoe UI",Tahoma,system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+
+/* Topbar: crisp white with #00B4FF accent and dark logo pill for pure white+blue logo contrast */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:2px solid var(--brand-soft);box-shadow:0 2px 14px rgba(0,180,255,.07)}
+.topbar-inner{max-width:1360px;margin:auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-frame{background:var(--ink-dark);border:1.5px solid rgba(0,180,255,.45);border-radius:12px;padding:7px 14px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,180,255,.18);flex-shrink:0;text-decoration:none}
+.brand-logo-img{height:24px;width:auto;display:block}
+.brand-logo-svg{height:24px;width:auto;display:block}
+.brand h1{margin:0;font-size:17px;font-weight:700;line-height:1.25;color:var(--text)}
+.brand .path{font-size:12px;color:var(--subtle);direction:ltr;unicode-bidi:plaintext;word-break:break-all}
+
+.lang-switch{display:inline-flex;background:var(--brand-soft);border:1px solid var(--brand-bd);border-radius:11px;padding:3px;gap:3px}
+.lang-switch button{border:0;background:transparent;padding:7px 15px;border-radius:8px;cursor:pointer;font-family:inherit;font-weight:700;font-size:13px;color:var(--brand-dark);transition:.15s}
+.lang-switch button.active{background:var(--brand);color:#fff;box-shadow:0 2px 8px rgba(0,180,255,.35)}
+
+.wrap{max-width:1360px;margin:auto;padding:24px 22px 56px}
+
+/* Hero Overview */
+.hero{display:grid;grid-template-columns:330px 1fr;gap:18px;margin-bottom:22px}
+.score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:flex;align-items:center;gap:18px;position:relative;overflow:hidden}
+.score-card::after{content:"";position:absolute;inset-inline:0;top:0;height:4px;background:var(--brand)}
+.ring-wrap{position:relative;width:104px;height:104px;flex-shrink:0}
+.ring-wrap svg{width:104px;height:104px;transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:#E6F2FA;stroke-width:9}
+.ring-fg{fill:none;stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset .5s ease}
+.ring-fg.s-excellent{stroke:var(--ex)}.ring-fg.s-good{stroke:var(--brand)}.ring-fg.s-acceptable{stroke:var(--ac)}.ring-fg.s-poor{stroke:var(--pr)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-center b{font-size:25px;font-weight:700;line-height:1;color:var(--text)}
+.ring-center small{font-size:11px;color:var(--subtle);margin-top:3px}
+.score-info h2{margin:0 0 6px;font-size:16px;font-weight:700}
+.score-info p{margin:6px 0 0;font-size:12.5px;color:var(--subtle)}
+
+.stats-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:13px 15px;transition:.15s}
+.kpi:hover{border-color:var(--brand-bd)}
+.kpi span{display:block;font-size:12px;color:var(--subtle)}
+.kpi b{display:block;font-size:23px;font-weight:700;margin-top:4px;color:var(--text)}
+.status-strip{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--border)}
+.dist-pills,.lang-tags{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.lang-tag{background:var(--brand-soft);border:1px solid var(--brand-bd);padding:4px 11px;border-radius:999px;font-size:12px;color:var(--brand-dark);font-weight:500}
+.lang-tag b{color:var(--ink-dark);margin-inline-start:4px}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;border:1px solid transparent;white-space:nowrap}
+.b-excellent{background:var(--ex-bg);color:var(--ex);border-color:var(--ex-bd)}
+.b-good{background:var(--gd-bg);color:var(--gd);border-color:var(--gd-bd)}
+.b-acceptable{background:var(--ac-bg);color:var(--ac);border-color:var(--ac-bd)}
+.b-poor{background:var(--pr-bg);color:var(--pr);border-color:var(--pr-bd)}
+.b-na{background:var(--na-bg);color:var(--na);border-color:var(--na-bd)}
+.b-purple{background:var(--pu-bg);color:var(--pu);border-color:var(--pu-bd)}
+
+/* Panels */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-bottom:22px}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.panel h2{margin:0;font-size:19px;font-weight:700}
+.panel-sub{margin:4px 0 0;font-size:13px;color:var(--subtle)}
+.count-pill{padding:4px 12px;border-radius:999px;font-weight:700;font-size:13px}
+.warn-pill{background:var(--pr-bg);color:var(--pr);border:1px solid var(--pr-bd)}
+
+/* Priority Plan */
+.action-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:12px}
+.action-item{border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:var(--surface-2)}
+.action-item.st-poor{border-inline-start:4px solid var(--pr);background:#FFF9FA}
+.action-item.st-acceptable{border-inline-start:4px solid var(--ac);background:#FFFDF5}
+.action-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.action-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px}
+.action-val{font-weight:700;font-size:14px;color:var(--text);white-space:nowrap}
+.action-tip{margin:0;font-size:13px;color:var(--muted)}
+.success-banner{background:var(--ex-bg);border-color:var(--ex-bd);color:#065F46;display:flex;flex-direction:column;gap:4px}
+
+/* Filters (#00B4FF active identity) */
+.filters{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{border:1px solid var(--border);background:#fff;color:var(--muted);padding:6px 14px;border-radius:999px;font-family:inherit;font-size:12.5px;font-weight:500;cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--brand);color:var(--brand-dark);background:var(--brand-soft)}
+.chip.active{background:var(--brand);color:#fff;border-color:var(--brand);font-weight:700;box-shadow:0 2px 8px rgba(0,180,255,.3)}
+
+/* Metric Cards Grid */
+.metrics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.m-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px;border-top:4px solid var(--na);transition:box-shadow .15s,border-color .15s}
+.m-card:hover{box-shadow:0 10px 26px rgba(0,180,255,.09)}
+.m-card.st-excellent{border-top-color:var(--ex)}
+.m-card.st-good{border-top-color:var(--brand)}
+.m-card.st-acceptable{border-top-color:var(--ac)}
+.m-card.st-poor{border-top-color:var(--pr)}
+.m-card.hidden{display:none}
+.m-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.m-meta-row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.m-id{font-size:11.5px;font-weight:700;color:var(--brand-dark);background:var(--brand-soft);border:1px solid var(--brand-bd);padding:1px 7px;border-radius:6px}
+.m-dim{font-size:12px;color:var(--subtle);font-weight:500}
+.m-name{margin:0;font-size:16px;font-weight:700;line-height:1.35}
+
+.m-score-box{background:var(--surface-2);border:1px solid var(--border);border-radius:11px;padding:12px 14px}
+.m-val-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.m-val{font-size:24px;font-weight:700;letter-spacing:-.02em;direction:ltr}
+.val-excellent{color:var(--ex)}.val-good{color:var(--brand-dark)}.val-acceptable{color:var(--ac)}.val-poor{color:var(--pr)}.val-na{color:var(--na)}
+.m-scale{font-size:12px;color:var(--subtle);font-weight:500}
+.bar-track{height:7px;background:#E6F2FA;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px}
+.fill-excellent{background:var(--ex)}.fill-good{background:var(--brand)}.fill-acceptable{background:var(--ac)}.fill-poor{background:var(--pr)}.fill-na{background:var(--na)}
+
+.m-desc{margin:0;font-size:13px;color:var(--muted)}
+.m-tip{padding:10px 12px;border-radius:10px;font-size:12.5px;line-height:1.55;border:1px solid var(--border);background:var(--surface-2)}
+.tip-poor{background:var(--pr-bg);border-color:var(--pr-bd);color:#881337}
+.tip-acceptable{background:var(--ac-bg);border-color:var(--ac-bd);color:#78350F}
+.tip-excellent,.tip-good{background:var(--ex-bg);border-color:var(--ex-bd);color:#064E3B}
+.tip-na{background:var(--brand-soft);border-color:var(--brand-bd);color:#0369A1}
+.tip-label{font-weight:700;margin-inline-end:6px}
+.m-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-top:10px;border-top:1px dashed var(--border);font-size:11.5px;color:var(--subtle);margin-top:auto}
+.m-note{direction:ltr;unicode-bidi:plaintext}
+.m-src{background:var(--surface-2);border:1px solid var(--border);padding:2px 8px;border-radius:6px;font-weight:500}
+
+/* Details Section */
+.details-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.search-input{flex:1;min-width:220px;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:13.5px;background:var(--surface-2);color:var(--text);outline:none;transition:.15s}
+.search-input:focus{border-color:var(--brand);background:#fff;box-shadow:0 0 0 3px rgba(0,180,255,.16)}
+.tool-btn{border:1px solid var(--brand-bd);background:var(--brand-soft);color:var(--brand-dark);padding:9px 14px;border-radius:10px;font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer;transition:.15s}
+.tool-btn:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+.d-card{border:1px solid var(--border);border-radius:12px;margin-bottom:10px;background:var(--surface);overflow:hidden}
+.d-card.tone-danger{border-inline-start:4px solid var(--pr)}
+.d-card.tone-warn{border-inline-start:4px solid var(--ac)}
+.d-card.tone-info{border-inline-start:4px solid var(--brand)}
+.d-sum{list-style:none;cursor:pointer;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface-2)}
+.d-sum::-webkit-details-marker{display:none}
+.d-sum:hover{background:var(--brand-soft)}
+.d-sum-text strong{display:block;font-size:14.5px}
+.d-sum-text small{display:block;font-size:12.5px;color:var(--subtle);margin-top:2px}
+.d-count{background:var(--brand);color:#fff;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;flex-shrink:0}
+.d-list{padding:8px 14px 12px;display:flex;flex-direction:column;gap:6px}
+.d-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 10px;border-radius:9px;background:var(--surface-2);border:1px solid var(--border);font-size:12.5px}
+.d-row.hidden{display:none}
+.d-badge{min-width:64px;justify-content:center;font-size:11px}
+.d-primary{font-family:"Google Sans Code",ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;color:var(--text);font-weight:600;direction:ltr;unicode-bidi:plaintext;word-break:break-all}
+.d-sec{color:var(--muted);font-size:12.5px;direction:ltr;unicode-bidi:plaintext;overflow-wrap:anywhere}
+.empty-msg{color:var(--subtle);font-size:13.5px;margin:8px 0}
+
+/* Footer with GitHub project link */
+.site-footer{margin-top:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:var(--shadow)}
+.footer-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--subtle)}
+.gh-link{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 3px 10px rgba(0,180,255,.28);transition:.15s;direction:ltr}
+.gh-link:hover{background:var(--brand-dark);transform:translateY(-1px)}
+.gh-link svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
+
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media print{
+  .topbar,.filters,.details-tools{display:none!important}
+  body{background:#fff}
+  .panel,.score-card,.stats-panel,.m-card,.site-footer{box-shadow:none;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <a class="logo-frame" href="https://github.com/braabormo/oodm-cli" target="_blank" rel="noopener noreferrer" title="OODM on GitHub"><img class="brand-logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADgMAAAM4CAYAAABbC3NKAAAACXBIWXMAAG66AABuugHW3rEXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAzTJJREFUeAHs3V16FFeWLuCVGHwumxpBh0dQMAInl11QbRgB6RFYHgFiBMgjUDICYQval0qPQNQIyBrBoS9PUXacvTMiRSLzo5/82RHxvs8TTgGu6i6UEdq59/rWGgUAAAAAAMAa1EmwDePRaPRbAAAAAAAAADAoNwIAAAAAAAAAAAAAAAAAKJowIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAAAAAAAFA4YUAAAAAAAAAAAAAAAAAAKJwwIAAAAAAAAAAAAAAAAAAUThgQAAAAAAAAAAAAAAAAAAonDAgAAAAAAAAAAAAAAAAAhRMGBAAAAAAAAAAAAAAAAIDCCQMCAAAAAAAAAAAAAAAAQOGEAQEAAAAAAAAAAAAAAACgcMKAAAAAAAAAAAAA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" alt="OODM"></a>
+      <div>
+        <h1 data-en="OODM · Code Quality Report" data-ar="OODM · تقرير جودة الكود والتصميم">OODM · تقرير جودة الكود والتصميم</h1>
+        <div class="path">/Users/adifiqriyansyah/Desktop/Al-Hiwar Clean Refactored · v2.0.2 · 2026-11-23</div>
+      </div>
+    </div>
+    <div class="lang-switch">
+      <button id="btn-ar" class="active" onclick="setLang('ar')">العربية</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="score-card">
+      <div class="ring-wrap">
+        <svg viewBox="0 0 100 100">
+          <circle class="ring-bg" cx="50" cy="50" r="44"/>
+          <circle class="ring-fg s-excellent" cx="50" cy="50" r="44" stroke-dasharray="276.5" stroke-dashoffset="19.4"/>
+        </svg>
+        <div class="ring-center">
+          <b>93%</b>
+          <small data-en="Health" data-ar="الصحة">الصحة</small>
+        </div>
+      </div>
+      <div class="score-info">
+        <h2 data-en="Overall Code Health" data-ar="التقييم العام للمشروع">التقييم العام للمشروع</h2>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+        <p data-en="Calculated from 16 of 16 measured metrics." data-ar="محسوب من 16 معيار مقاس من أصل 16.">محسوب من 16 معيار مقاس من أصل 16.</p>
+      </div>
+    </div>
+
+    <div class="stats-panel">
+      <div class="kpi-grid">
+        <div class="kpi"><span data-en="Source Files" data-ar="ملفات المصدر">ملفات المصدر</span><b>223</b></div>
+        <div class="kpi"><span data-en="Classes & Interfaces" data-ar="الكلاسات والواجهات">الكلاسات والواجهات</span><b>132</b></div>
+        <div class="kpi"><span data-en="Source Lines (SLOC)" data-ar="أسطر الكود الفعلية">أسطر الكود الفعلية</span><b>29,505</b></div>
+        <div class="kpi"><span data-en="Test Files" data-ar="ملفات الاختبارات">ملفات الاختبارات</span><b>32</b></div>
+      </div>
+      <div class="status-strip">
+        <div class="dist-pills">
+          <span class="badge b-excellent" data-en="13 Excellent" data-ar="13 ممتاز">13 ممتاز</span>
+          <span class="badge b-good" data-en="1 Good" data-ar="1 جيد">1 جيد</span>
+          <span class="badge b-acceptable" data-en="2 Acceptable" data-ar="2 مقبول">2 مقبول</span>
+          <span class="badge b-poor" data-en="0 Needs Work" data-ar="0 يحتاج تحسين">0 يحتاج تحسين</span>
+          <span class="badge b-na" data-en="0 N/A" data-ar="0 غير مقاس">0 غير مقاس</span>
+        </div>
+        <div class="lang-tags"><span class="lang-tag">javascript <b>2</b></span><span class="lang-tag">tsx <b>71</b></span><span class="lang-tag">typescript <b>150</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel priority-panel">
+      <div class="panel-head">
+        <div>
+          <h2 data-en="Priority Improvement Plan" data-ar="خطة التحسين ذات الأولوية">خطة التحسين ذات الأولوية</h2>
+          <p class="panel-sub" data-en="Focus on these metrics first to get the biggest quality boost." data-ar="ابدأ بهذه المعايير أولاً لتحقيق أكبر تحسّن ممكن في جودة المشروع.">ابدأ بهذه المعايير أولاً لتحقيق أكبر تحسّن ممكن في جودة المشروع.</p>
+        </div>
+        <span class="count-pill warn-pill">2</span>
+      </div>
+      <div class="action-grid"><div class="action-item st-acceptable">
+        <div class="action-top">
+          <div class="action-title">
+            <span class="badge b-acceptable" data-en="Acceptable" data-ar="مقبول">مقبول</span>
+            <strong data-en="#4 Maintainability Index (MI)" data-ar="#4 مؤشر قابلية الصيانة (MI)">#4 مؤشر قابلية الصيانة (MI)</strong>
+          </div>
+          <span class="action-val">50.9</span>
+        </div>
+        <p class="action-tip" data-en="Start with the weakest files listed below: break long files into smaller modules, simplify nested conditions, and add brief explanatory comments." data-ar="ابدأ بأضعف الملفات المذكورة في قسم التفاصيل أدناه: قسّم الملفات الطويلة لوحدات أصغر، بسّط الشروط المتداخلة، وأضف تعليقات توضيحية موجزة.">ابدأ بأضعف الملفات المذكورة في قسم التفاصيل أدناه: قسّم الملفات الطويلة لوحدات أصغر، بسّط الشروط المتداخلة، وأضف تعليقات توضيحية موجزة.</p>
+      </div><div class="action-item st-acceptable">
+        <div class="action-top">
+          <div class="action-title">
+            <span class="badge b-acceptable" data-en="Acceptable" data-ar="مقبول">مقبول</span>
+            <strong data-en="#15 Test Coverage (%)" data-ar="#15 تغطية الاختبارات (Test Coverage)">#15 تغطية الاختبارات (Test Coverage)</strong>
+          </div>
+          <span class="action-val">42.8%</span>
+        </div>
+        <p class="action-tip" data-en="Prioritize unit and integration tests for core business logic, high-complexity functions, and critical edge cases until coverage exceeds 80%." data-ar="ابدأ بكتابة اختبارات وحدة وتكامل لمنطق العمل الأساسي والدوال عالية التعقيد وحالات الخطأ حتى تتجاوز التغطية 80%.">ابدأ بكتابة اختبارات وحدة وتكامل لمنطق العمل الأساسي والدوال عالية التعقيد وحالات الخطأ حتى تتجاوز التغطية 80%.</p>
+      </div></div>
+    </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div>
+        <h2 data-en="All 16 Quality Metrics" data-ar="المعايير الـ 16 بالتفصيل">المعايير الـ 16 بالتفصيل</h2>
+        <p class="panel-sub" data-en="Each card explains what the metric measures, its target scale, your score, and how to improve it." data-ar="توضح كل بطاقة ماذا يقيس المعيار، والمقياس المستهدف، ودرجة مشروعك الحالية، ونصيحة عملية لتحسينها.">توضح كل بطاقة ماذا يقيس المعيار، والمقياس المستهدف، ودرجة مشروعك الحالية، ونصيحة عملية لتحسينها.</p>
+      </div>
+    </div>
+    <div class="filters">
+      <div class="filter-row">
+        <button class="chip active" data-st-filter="all" onclick="setStatusFilter('all')" data-en="All Statuses" data-ar="كل الحالات">كل الحالات</button>
+        <button class="chip" data-st-filter="attention" onclick="setStatusFilter('attention')" data-en="Needs Attention (2)" data-ar="يحتاج انتباه (2)">يحتاج انتباه (2)</button>
+        <button class="chip" data-st-filter="healthy" onclick="setStatusFilter('healthy')" data-en="Healthy (14)" data-ar="ممتاز وجيد (14)">ممتاز وجيد (14)</button>
+        <button class="chip" data-st-filter="na" onclick="setStatusFilter('na')" data-en="Not Measured (0)" data-ar="غير مقاس (0)">غير مقاس (0)</button>
+      </div>
+      <div class="filter-row">
+        <button class="chip active" data-dim-filter="all" onclick="setDimFilter('all')" data-en="All Dimensions" data-ar="كل الأبعاد">كل الأبعاد</button>
+        <button class="chip" data-dim-filter="Reusability" onclick="setDimFilter('Reusability')" data-en="Reusability" data-ar="قابلية إعادة الاستخدام">قابلية إعادة الاستخدام</button><button class="chip" data-dim-filter="Maintainability" onclick="setDimFilter('Maintainability')" data-en="Maintainability" data-ar="قابلية الصيانة">قابلية الصيانة</button><button class="chip" data-dim-filter="Extensibility" onclick="setDimFilter('Extensibility')" data-en="Extensibility" data-ar="قابلية التوسعة">قابلية التوسعة</button><button class="chip" data-dim-filter="Diagram Fidelity" onclick="setDimFilter('Diagram Fidelity')" data-en="Diagram Fidelity" data-ar="مطابقة المخططات">مطابقة المخططات</button><button class="chip" data-dim-filter="Design Quality" onclick="setDimFilter('Design Quality')" data-en="Design Quality" data-ar="جودة التصميم">جودة التصميم</button><button class="chip" data-dim-filter="Reliability" onclick="setDimFilter('Reliability')" data-en="Reliability" data-ar="الموثوقية والأمان">الموثوقية والأمان</button>
+      </div>
+    </div>
+    <div class="metrics-grid" id="metrics-grid"><article class="m-card st-excellent" data-status="excellent" data-dim="Reusability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#1</span>
+            <span class="m-dim" data-en="Reusability" data-ar="قابلية إعادة الاستخدام">قابلية إعادة الاستخدام</span>
+          </div>
+          <h3 class="m-name" data-en="Coupling Between Objects (CBO)" data-ar="الاقتران بين الكائنات (CBO)">الاقتران بين الكائنات (CBO)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">2.97</span>
+          <span class="m-scale" data-en="Avg classes coupled / class · Ideal: ≤ 4" data-ar="متوسط الكلاسات المرتبطة بكل كلاس · المستهدف: ≤ 4">متوسط الكلاسات المرتبطة بكل كلاس · المستهدف: ≤ 4</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:95%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Measures how many other classes each class directly depends on. High coupling makes changes ripple across the codebase and makes testing harder." data-ar="يقيس متوسط عدد الكلاسات الأخرى التي يعتمد عليها كل كلاس مباشرة. كلما ارتفع الرقم زادت صعوبة تعديل كلاس دون كسر كلاسات أخرى.">يقيس متوسط عدد الكلاسات الأخرى التي يعتمد عليها كل كلاس مباشرة. كلما ارتفع الرقم زادت صعوبة تعديل كلاس دون كسر كلاسات أخرى.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Great low coupling! Keep classes focused on a single responsibility as new features are added." data-ar="اقتران منخفض وممتاز! حافظ على استقلالية الكلاسات ومبدأ المسؤولية الواحدة عند إضافة ميزات جديدة.">اقتران منخفض وممتاز! حافظ على استقلالية الكلاسات ومبدأ المسؤولية الواحدة عند إضافة ميزات جديدة.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">avg per class; max 19 (InMemoryDatabaseAdapter)</span>
+        <span class="m-src">native</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Reusability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#2</span>
+            <span class="m-dim" data-en="Reusability" data-ar="قابلية إعادة الاستخدام">قابلية إعادة الاستخدام</span>
+          </div>
+          <h3 class="m-name" data-en="Lack of Cohesion in Methods (LCOM)" data-ar="نقص التماسك في الدوال (LCOM)">نقص التماسك في الدوال (LCOM)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">0.43</span>
+          <span class="m-scale" data-en="Unrelated method pairs · Ideal: 0 – 1" data-ar="أزواج الدوال غير المترابطة · المستهدف: 0 – 1">أزواج الدوال غير المترابطة · المستهدف: 0 – 1</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:96%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Measures whether methods inside a class work on the same fields. A high value means the class is doing multiple unrelated jobs." data-ar="يقيس مدى ترابط الدوال داخل نفس الكلاس عبر استخدامها لنفس الخصائص (Fields). ارتفاع الرقم يعني أن الكلاس يقوم بعدة مهام غير مترابطة.">يقيس مدى ترابط الدوال داخل نفس الكلاس عبر استخدامها لنفس الخصائص (Fields). ارتفاع الرقم يعني أن الكلاس يقوم بعدة مهام غير مترابطة.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Strong class cohesion! Your classes group related data and methods cleanly." data-ar="تماسك ممتاز داخل الكلاسات! البيانات والدوال منظمة بشكل مترابط وسليم.">تماسك ممتاز داخل الكلاسات! البيانات والدوال منظمة بشكل مترابط وسليم.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">CK definition; avg across 28 concrete classes (interfaces excluded); max 7 (ChatServiceImpl)</span>
+        <span class="m-src">native</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Reusability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#3</span>
+            <span class="m-dim" data-en="Reusability" data-ar="قابلية إعادة الاستخدام">قابلية إعادة الاستخدام</span>
+          </div>
+          <h3 class="m-name" data-en="Reuse Index" data-ar="مؤشر قابلية إعادة الاستخدام (Reuse Index)">مؤشر قابلية إعادة الاستخدام (Reuse Index)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">66.23</span>
+          <span class="m-scale" data-en="QMOOD composite index · Higher is better" data-ar="مؤشر QMOOD المركّب · الأعلى أفضل">مؤشر QMOOD المركّب · الأعلى أفضل</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:92%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Combines coupling, cohesion, public messaging interface, and design size (QMOOD model) to estimate how reusable the architecture is." data-ar="مؤشر مركّب (وفق نموذج QMOOD) يجمع بين الاقتران والتماسك وعدد الدوال العامة وحجم التصميم لتقدير سهولة إعادة استخدام مكونات المشروع.">مؤشر مركّب (وفق نموذج QMOOD) يجمع بين الاقتران والتماسك وعدد الدوال العامة وحجم التصميم لتقدير سهولة إعادة استخدام مكونات المشروع.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Healthy reusability profile. Use --baseline with a previous JSON report to measure relative improvement over time." data-ar="مؤشر إعادة استخدام صحي وجيد. يمكنك حفظ التقرير بصيغة JSON واستخدام --baseline لقياس التحسن مستقبلاً.">مؤشر إعادة استخدام صحي وجيد. يمكنك حفظ التقرير بصيغة JSON واستخدام --baseline لقياس التحسن مستقبلاً.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">raw QMOOD; use --baseline old.json to normalize</span>
+        <span class="m-src">native (QMOOD)</span>
+      </div>
+    </article><article class="m-card st-acceptable" data-status="acceptable" data-dim="Maintainability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#4</span>
+            <span class="m-dim" data-en="Maintainability" data-ar="قابلية الصيانة">قابلية الصيانة</span>
+          </div>
+          <h3 class="m-name" data-en="Maintainability Index (MI)" data-ar="مؤشر قابلية الصيانة (MI)">مؤشر قابلية الصيانة (MI)</h3>
+        </div>
+        <span class="badge b-acceptable" data-en="Acceptable" data-ar="مقبول">مقبول</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-acceptable">50.9</span>
+          <span class="m-scale" data-en="Scale: 0 – 100 · Ideal: ≥ 80" data-ar="المقياس: من 0 إلى 100 · المستهدف: ≥ 80">المقياس: من 0 إلى 100 · المستهدف: ≥ 80</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-acceptable" style="width:51%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Composite score (0 to 100) combining code volume, cyclomatic complexity, lines of code, and comments to gauge how easy files are to maintain." data-ar="درجة شاملة من 100 تدمج حجم الكود والتعقيد الدوري وعدد الأسطر والتعليقات لتقدير مدى سهولة قراءة الملفات وتعديلها لاحقاً.">درجة شاملة من 100 تدمج حجم الكود والتعقيد الدوري وعدد الأسطر والتعليقات لتقدير مدى سهولة قراءة الملفات وتعديلها لاحقاً.</p>
+
+      <div class="m-tip tip-acceptable">
+        <span class="tip-label" data-en="How to improve:" data-ar="نصيحة للتحسين:">نصيحة للتحسين:</span>
+        <span data-en="Start with the weakest files listed below: break long files into smaller modules, simplify nested conditions, and add brief explanatory comments." data-ar="ابدأ بأضعف الملفات المذكورة في قسم التفاصيل أدناه: قسّم الملفات الطويلة لوحدات أصغر، بسّط الشروط المتداخلة، وأضف تعليقات توضيحية موجزة.">ابدأ بأضعف الملفات المذكورة في قسم التفاصيل أدناه: قسّم الملفات الطويلة لوحدات أصغر، بسّط الشروط المتداخلة، وأضف تعليقات توضيحية موجزة.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">0-100, mean of files; min 19.2</span>
+        <span class="m-src">native</span>
+      </div>
+    </article><article class="m-card st-good" data-status="good" data-dim="Maintainability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#5</span>
+            <span class="m-dim" data-en="Maintainability" data-ar="قابلية الصيانة">قابلية الصيانة</span>
+          </div>
+          <h3 class="m-name" data-en="Cyclomatic Complexity (CC)" data-ar="التعقيد الدوري (Cyclomatic Complexity)">التعقيد الدوري (Cyclomatic Complexity)</h3>
+        </div>
+        <span class="badge b-good" data-en="Good" data-ar="جيد">جيد</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-good">5.70</span>
+          <span class="m-scale" data-en="Avg branches / function · Ideal: ≤ 5" data-ar="متوسط المسارات المتفرعة لكل دالة · المستهدف: ≤ 5">متوسط المسارات المتفرعة لكل دالة · المستهدف: ≤ 5</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-good" style="width:78%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Counts independent execution paths (if, loops, switch, &amp;&amp;/||) per function. Higher values mean harder debugging and more test cases needed." data-ar="يحسب متوسط عدد المسارات المنطقية (if، الحلقات، switch، الشروط المركبة) في كل دالة. ارتفاعه يعني صعوبة الفهم والاختبار وزيادة احتمالية الأخطاء.">يحسب متوسط عدد المسارات المنطقية (if، الحلقات، switch، الشروط المركبة) في كل دالة. ارتفاعه يعني صعوبة الفهم والاختبار وزيادة احتمالية الأخطاء.</p>
+
+      <div class="m-tip tip-good">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Functions are simple and easy to trace. Check if any individual outlier function exceeded 10 in the details section." data-ar="متوسط التعقيد ممتاز والدوال سهلة التتبع. تأكد فقط من مراجعة أي دالة فردية تجاوزت 10 في قسم التفاصيل.">متوسط التعقيد ممتاز والدوال سهلة التتبع. تأكد فقط من مراجعة أي دالة فردية تجاوزت 10 في قسم التفاصيل.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">avg per function; max 34; 132 functions &gt; 10</span>
+        <span class="m-src">native</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Maintainability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#6</span>
+            <span class="m-dim" data-en="Maintainability" data-ar="قابلية الصيانة">قابلية الصيانة</span>
+          </div>
+          <h3 class="m-name" data-en="Defect Density" data-ar="كثافة العيوب المحتملة (Defect Density)">كثافة العيوب المحتملة (Defect Density)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">0.00 /KLOC</span>
+          <span class="m-scale" data-en="Static findings / 1,000 SLOC · Ideal: 0" data-ar="عدد الملاحظات لكل 1,000 سطر كود · المستهدف: 0">عدد الملاحظات لكل 1,000 سطر كود · المستهدف: 0</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:100%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Proxy rate of potential bugs and security findings per 1,000 lines of source code (SLOC). Lower means cleaner, safer code." data-ar="يقيس معدل المشاكل الأمنية وأنماط الأخطاء البرمجية المكتشفة لكل 1,000 سطر كود فعلي. كلما اقترب من الصفر كان الكود أكثر نظافة وأماناً.">يقيس معدل المشاكل الأمنية وأنماط الأخطاء البرمجية المكتشفة لكل 1,000 سطر كود فعلي. كلما اقترب من الصفر كان الكود أكثر نظافة وأماناً.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Very low static defect density! Maintain this standard by running OODM in code reviews or CI." data-ar="كثافة عيوب منخفضة جداً! حافظ على هذا المستوى بفحص المشروع دورياً قبل كل إصدار.">كثافة عيوب منخفضة جداً! حافظ على هذا المستوى بفحص المشروع دورياً قبل كل إصدار.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">0 security + 0 bug-pattern findings / 29505 SLOC</span>
+        <span class="m-src">native (proxy)</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Extensibility">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#7</span>
+            <span class="m-dim" data-en="Extensibility" data-ar="قابلية التوسعة">قابلية التوسعة</span>
+          </div>
+          <h3 class="m-name" data-en="Depth of Inheritance Tree (DIT)" data-ar="عمق شجرة الوراثة (DIT)">عمق شجرة الوراثة (DIT)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">0.09</span>
+          <span class="m-scale" data-en="Avg inheritance depth · Ideal: 0 – 3" data-ar="متوسط مستويات الوراثة · المستهدف: 0 – 3">متوسط مستويات الوراثة · المستهدف: 0 – 3</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:94%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Measures how many parent classes a class inherits from on average. Deep hierarchies (&gt; 4) become fragile and hard to predict." data-ar="يقيس متوسط عدد مستويات الوراثة للكلاسات. الشجرات العميقة جداً (أكثر من 4 مستويات) تجعل تتبع السلوك صعباً والتعديل خطراً.">يقيس متوسط عدد مستويات الوراثة للكلاسات. الشجرات العميقة جداً (أكثر من 4 مستويات) تجعل تتبع السلوك صعباً والتعديل خطراً.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Healthy, shallow inheritance depth. Classes remain easy to understand without hidden ancestor behavior." data-ar="عمق وراثة متوازن وسليم، مما يبقي سلوك الكلاسات واضحاً وسهل التتبع.">عمق وراثة متوازن وسليم، مما يبقي سلوك الكلاسات واضحاً وسهل التتبع.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">avg per class; max 1 (BadgeProps)</span>
+        <span class="m-src">native</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Extensibility">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#8</span>
+            <span class="m-dim" data-en="Extensibility" data-ar="قابلية التوسعة">قابلية التوسعة</span>
+          </div>
+          <h3 class="m-name" data-en="Number of Children (NOC)" data-ar="عدد الأبناء المباشرين (NOC)">عدد الأبناء المباشرين (NOC)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">0.09</span>
+          <span class="m-scale" data-en="Avg direct subclasses / class · Ideal: 0 – 4" data-ar="متوسط الكلاسات الفرعية لكل كلاس · المستهدف: 0 – 4">متوسط الكلاسات الفرعية لكل كلاس · المستهدف: 0 – 4</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:94%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Measures the average number of immediate subclasses inheriting from each class. Very high NOC increases the blast radius of base-class changes." data-ar="يقيس متوسط عدد الكلاسات التي ترث مباشرة من كل كلاس. ارتفاعه بشكل مفرط يعني أن أي تعديل في الكلاس الأب قد يؤثر على عدد كبير جداً من الكلاسات.">يقيس متوسط عدد الكلاسات التي ترث مباشرة من كل كلاس. ارتفاعه بشكل مفرط يعني أن أي تعديل في الكلاس الأب قد يؤثر على عدد كبير جداً من الكلاسات.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Balanced inheritance breadth with manageable impact radius." data-ar="توزيع متوازن للوراثة بدون تركّز خطير على كلاس أب واحد.">توزيع متوازن للوراثة بدون تركّز خطير على كلاس أب واحد.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">avg per class; max 6 (User)</span>
+        <span class="m-src">native</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Extensibility">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#9</span>
+            <span class="m-dim" data-en="Extensibility" data-ar="قابلية التوسعة">قابلية التوسعة</span>
+          </div>
+          <h3 class="m-name" data-en="Polymorphism Factor (PF)" data-ar="معامل تعدد الأشكال (Polymorphism Factor)">معامل تعدد الأشكال (Polymorphism Factor)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">0.570</span>
+          <span class="m-scale" data-en="Scale: 0.000 – 1.000 · Ideal: ≥ 0.100" data-ar="المقياس: من 0.000 إلى 1.000 · المستهدف: ≥ 0.100">المقياس: من 0.000 إلى 1.000 · المستهدف: ≥ 0.100</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:100%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Ratio of overridden methods to maximum possible overrides across inheritance trees (MOOD metric). Shows how actively polymorphism is used." data-ar="نسبة الدوال المعاد تعريفها (Overridden) إلى الحد الأقصى الممكن عبر شجرة الوراثة. يوضح مدى الاستفادة من تعدد الأشكال (Polymorphism) لتوسيع النظام.">نسبة الدوال المعاد تعريفها (Overridden) إلى الحد الأقصى الممكن عبر شجرة الوراثة. يوضح مدى الاستفادة من تعدد الأشكال (Polymorphism) لتوسيع النظام.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Good use of polymorphism! Subclasses extend behavior cleanly without modifying existing callers." data-ar="استخدام ممتاز لتعدد الأشكال! يمكنك توسيع النظام بإضافة أنواع جديدة دون تعديل الكود القديم.">استخدام ممتاز لتعدد الأشكال! يمكنك توسيع النظام بإضافة أنواع جديدة دون تعديل الكود القديم.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">overridden / (new methods x descendants), 0..1</span>
+        <span class="m-src">native (MOOD)</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Diagram Fidelity">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#10</span>
+            <span class="m-dim" data-en="Diagram Fidelity" data-ar="مطابقة المخططات">مطابقة المخططات</span>
+          </div>
+          <h3 class="m-name" data-en="Structural Traceability (%)" data-ar="التتبع الهيكلي للمخطط (Structural Traceability)">التتبع الهيكلي للمخطط (Structural Traceability)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">100.0%</span>
+          <span class="m-scale" data-en="Scale: 0% – 100% · Ideal: ≥ 90%" data-ar="المقياس: 0% – 100% · المستهدف: ≥ 90%">المقياس: 0% – 100% · المستهدف: ≥ 90%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:100%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Percentage of classes, methods, and relationships in your UML Class Diagram that actually exist in the source code." data-ar="نسبة الكلاسات والدوال والعلاقات الموجودة في مخطط الكلاسات (Class Diagram) والتي تم تنفيذها فعلياً في الكود.">نسبة الكلاسات والدوال والعلاقات الموجودة في مخطط الكلاسات (Class Diagram) والتي تم تنفيذها فعلياً في الكود.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Strong alignment between your class diagram and implementation!" data-ar="تطابق ممتاز بين مخطط الكلاسات والتنفيذ الفعلي في الكود!">تطابق ممتاز بين مخطط الكلاسات والتنفيذ الفعلي في الكود!</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">classes 20/20, methods 42/42, relations 31/31; 112 code classes not in diagram</span>
+        <span class="m-src">diagram vs code</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Diagram Fidelity">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#11</span>
+            <span class="m-dim" data-en="Diagram Fidelity" data-ar="مطابقة المخططات">مطابقة المخططات</span>
+          </div>
+          <h3 class="m-name" data-en="Behavioral Fidelity (%)" data-ar="المطابقة السلوكية (Behavioral Fidelity)">المطابقة السلوكية (Behavioral Fidelity)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">100.0%</span>
+          <span class="m-scale" data-en="Scale: 0% – 100% · Ideal: ≥ 90%" data-ar="المقياس: 0% – 100% · المستهدف: ≥ 90%">المقياس: 0% – 100% · المستهدف: ≥ 90%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:100%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Percentage of messages/calls in your UML Sequence Diagrams whose target classes, methods, and caller references exist in code." data-ar="نسبة الرسائل والاستدعاءات المرسومة في مخططات التسلسل (Sequence Diagrams) والتي تطابق استدعاءات حقيقية بين الكلاسات في الكود.">نسبة الرسائل والاستدعاءات المرسومة في مخططات التسلسل (Sequence Diagrams) والتي تطابق استدعاءات حقيقية بين الكلاسات في الكود.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Your runtime interaction design closely matches the implemented calls." data-ar="مطابقة ممتازة بين التفاعلات المخططة والاستدعاءات المنفذة في الكود.">مطابقة ممتازة بين التفاعلات المخططة والاستدعاءات المنفذة في الكود.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">7/7 messages verified; static check, order not verified</span>
+        <span class="m-src">diagram vs code</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Diagram Fidelity">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#12</span>
+            <span class="m-dim" data-en="Diagram Fidelity" data-ar="مطابقة المخططات">مطابقة المخططات</span>
+          </div>
+          <h3 class="m-name" data-en="Use Case Coverage (%)" data-ar="تغطية حالات الاستخدام (Use Case Coverage)">تغطية حالات الاستخدام (Use Case Coverage)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">100.0%</span>
+          <span class="m-scale" data-en="Scale: 0% – 100% · Ideal: ≥ 90%" data-ar="المقياس: 0% – 100% · المستهدف: ≥ 90%">المقياس: 0% – 100% · المستهدف: ≥ 90%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:100%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Estimates what percentage of documented user requirements (usecases.txt) have corresponding classes or functions in the codebase." data-ar="يقيس نسبة حالات الاستخدام (Use Cases) الموثقة في ملف usecases.txt والتي لها دوال أو كلاسات مقابلة في الكود.">يقيس نسبة حالات الاستخدام (Use Cases) الموثقة في ملف usecases.txt والتي لها دوال أو كلاسات مقابلة في الكود.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Great traceability from business requirements to code modules!" data-ar="تغطية ممتازة لمتطلبات المشروع وحالات الاستخدام داخل الكود!">تغطية ممتازة لمتطلبات المشروع وحالات الاستخدام داخل الكود!</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">34/34 use cases matched (name heuristic)</span>
+        <span class="m-src">usecases vs code</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Design Quality">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#13</span>
+            <span class="m-dim" data-en="Design Quality" data-ar="جودة التصميم">جودة التصميم</span>
+          </div>
+          <h3 class="m-name" data-en="Architectural Compliance (1-10)" data-ar="الامتثال المعماري (Architectural Compliance)">الامتثال المعماري (Architectural Compliance)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">10.0/10</span>
+          <span class="m-scale" data-en="Scale: 0 – 10 · Ideal: ≥ 9.0" data-ar="المقياس: من 0 إلى 10 · المستهدف: ≥ 9.0">المقياس: من 0 إلى 10 · المستهدف: ≥ 9.0</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:100%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Scores how well cross-layer imports/references respect your architectural boundary rules (e.g., Controllers -&gt; Services -&gt; Repositories)." data-ar="يقيس مدى التزام الملفات بقواعد الطبقات المعمارية (مثل منع طبقة البيانات من استدعاء طبقة الواجهات).">يقيس مدى التزام الملفات بقواعد الطبقات المعمارية (مثل منع طبقة البيانات من استدعاء طبقة الواجهات).</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Clean architectural boundaries with minimal or zero layer violations." data-ar="التزام معماري ممتاز واحترام واضح لحدود الطبقات.">التزام معماري ممتاز واحترام واضح لحدود الطبقات.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">0 violations in 59 cross-layer dependencies</span>
+        <span class="m-src">rules</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Reliability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#14</span>
+            <span class="m-dim" data-en="Reliability" data-ar="الموثوقية والأمان">الموثوقية والأمان</span>
+          </div>
+          <h3 class="m-name" data-en="Security Issues Count (high)" data-ar="الثغرات الأمنية عالية الخطورة (Security Issues)">الثغرات الأمنية عالية الخطورة (Security Issues)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">0</span>
+          <span class="m-scale" data-en="Count of high-severity alerts · Ideal: 0" data-ar="عدد الملاحظات عالية الخطورة · المستهدف: 0">عدد الملاحظات عالية الخطورة · المستهدف: 0</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:100%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Counts high-risk static security patterns such as SQL injection, eval/exec, weak hashes (MD5/SHA1), disabled TLS, or unsafe deserialization." data-ar="يحصي الأنماط الأمنية الخطيرة مثل حقن SQL، استخدام eval/exec، التشفير الضعيف (MD5/SHA1)، أو تعطيل التحقق من شهادات TLS.">يحصي الأنماط الأمنية الخطيرة مثل حقن SQL، استخدام eval/exec، التشفير الضعيف (MD5/SHA1)، أو تعطيل التحقق من شهادات TLS.</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Zero high-severity static security findings! Still review any medium findings and run dependency audits (npm audit / pip-audit)." data-ar="ممتاز! لم تُكتشف ثغرات عالية الخطورة. احرص أيضاً على مراجعة الملاحظات المتوسطة وفحص المكتبات الخارجية دورياً.">ممتاز! لم تُكتشف ثغرات عالية الخطورة. احرص أيضاً على مراجعة الملاحظات المتوسطة وفحص المكتبات الخارجية دورياً.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">0 medium (pattern rules; not a full audit)</span>
+        <span class="m-src">native</span>
+      </div>
+    </article><article class="m-card st-acceptable" data-status="acceptable" data-dim="Reliability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#15</span>
+            <span class="m-dim" data-en="Reliability" data-ar="الموثوقية والأمان">الموثوقية والأمان</span>
+          </div>
+          <h3 class="m-name" data-en="Test Coverage (%)" data-ar="تغطية الاختبارات (Test Coverage)">تغطية الاختبارات (Test Coverage)</h3>
+        </div>
+        <span class="badge b-acceptable" data-en="Acceptable" data-ar="مقبول">مقبول</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-acceptable">42.8%</span>
+          <span class="m-scale" data-en="Scale: 0% – 100% · Ideal: ≥ 80%" data-ar="المقياس: 0% – 100% · المستهدف: ≥ 80%">المقياس: 0% – 100% · المستهدف: ≥ 80%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-acceptable" style="width:43%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Percentage of executable source code lines exercised by your automated test suite (read from JaCoCo, lcov, or Cobertura reports)." data-ar="نسبة أسطر الكود الفعلي التي يتم تشغيلها وفحصها أثناء الاختبارات الآلية (تُقرأ من تقارير JaCoCo أو lcov أو Cobertura).">نسبة أسطر الكود الفعلي التي يتم تشغيلها وفحصها أثناء الاختبارات الآلية (تُقرأ من تقارير JaCoCo أو lcov أو Cobertura).</p>
+
+      <div class="m-tip tip-acceptable">
+        <span class="tip-label" data-en="How to improve:" data-ar="نصيحة للتحسين:">نصيحة للتحسين:</span>
+        <span data-en="Prioritize unit and integration tests for core business logic, high-complexity functions, and critical edge cases until coverage exceeds 80%." data-ar="ابدأ بكتابة اختبارات وحدة وتكامل لمنطق العمل الأساسي والدوال عالية التعقيد وحالات الخطأ حتى تتجاوز التغطية 80%.">ابدأ بكتابة اختبارات وحدة وتكامل لمنطق العمل الأساسي والدوال عالية التعقيد وحالات الخطأ حتى تتجاوز التغطية 80%.</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">lcov report</span>
+        <span class="m-src">report: lcov.info</span>
+      </div>
+    </article><article class="m-card st-excellent" data-status="excellent" data-dim="Maintainability">
+      <div class="m-head">
+        <div>
+          <div class="m-meta-row">
+            <span class="m-id">#16</span>
+            <span class="m-dim" data-en="Maintainability" data-ar="قابلية الصيانة">قابلية الصيانة</span>
+          </div>
+          <h3 class="m-name" data-en="Style / Readability Score" data-ar="جودة الأسلوب وقابلية القراءة (Style Score)">جودة الأسلوب وقابلية القراءة (Style Score)</h3>
+        </div>
+        <span class="badge b-excellent" data-en="Excellent" data-ar="ممتاز">ممتاز</span>
+      </div>
+
+      <div class="m-score-box">
+        <div class="m-val-row">
+          <span class="m-val val-excellent">8.54/10</span>
+          <span class="m-scale" data-en="Scale: 0 – 10 · Ideal: ≥ 8.5" data-ar="المقياس: من 0 إلى 10 · المستهدف: ≥ 8.5">المقياس: من 0 إلى 10 · المستهدف: ≥ 8.5</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-excellent" style="width:85%"></div></div>
+      </div>
+
+      <p class="m-desc" data-en="Scores code readability and adherence to conventions (line length ≤ 100, naming, function length ≤ 50, parameter count ≤ 5, nesting ≤ 4, docs)." data-ar="درجة من 10 تقيس نظافة الكود والتزامه بقواعد التنسيق (طول السطر ≤ 100، التسمية السليمة، طول الدالة ≤ 50، عدد المعاملات ≤ 5، التداخل ≤ 4، والتوثيق).">درجة من 10 تقيس نظافة الكود والتزامه بقواعد التنسيق (طول السطر ≤ 100، التسمية السليمة، طول الدالة ≤ 50، عدد المعاملات ≤ 5، التداخل ≤ 4، والتوثيق).</p>
+
+      <div class="m-tip tip-excellent">
+        <span class="tip-label" data-en="Status note:" data-ar="ملاحظة:">ملاحظة:</span>
+        <span data-en="Clean, consistent, and readable codebase!" data-ar="كود نظيف ومتسق وسهل القراءة!">كود نظيف ومتسق وسهل القراءة!</span>
+      </div>
+
+      <div class="m-foot">
+        <span class="m-note">pylint-like formula; 1090 convention, 138 refactor</span>
+        <span class="m-src">native</span>
+      </div>
+    </article></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div>
+        <h2 data-en="Detailed Findings & Offenders" data-ar="التفاصيل والملاحظات بالملف والسطر">التفاصيل والملاحظات بالملف والسطر</h2>
+        <p class="panel-sub" data-en="Exact files, classes, functions, and line numbers behind the numbers above." data-ar="الملفات والكلاسات والدوال وأرقام الأسطر الدقيقة التي تسببت في الدرجات أعلاه.">الملفات والكلاسات والدوال وأرقام الأسطر الدقيقة التي تسببت في الدرجات أعلاه.</p>
+      </div>
+    </div>
+    <div class="details-tools">
+      <input id="detail-search" class="search-input" type="search" oninput="filterDetails(this.value)" placeholder="ابحث باسم ملف أو كلاس أو دالة..." data-ph-en="Search by file, class, function, or message..." data-ph-ar="ابحث باسم ملف أو كلاس أو دالة...">
+      <button class="tool-btn" onclick="toggleAllDetails(true)" data-en="Expand All" data-ar="توسيع الكل">توسيع الكل</button>
+      <button class="tool-btn" onclick="toggleAllDetails(false)" data-en="Collapse All" data-ar="طي الكل">طي الكل</button>
+    </div>
+    <div id="details-wrap"><details class="d-card tone-warn" open>
+      <summary class="d-sum">
+        <div class="d-sum-text">
+          <strong data-en="Most Coupled Classes (Highest CBO)" data-ar="أكثر الكلاسات اقتراناً (الأعلى في CBO)">أكثر الكلاسات اقتراناً (الأعلى في CBO)</strong>
+          <small data-en="Classes connected to the largest number of other classes. Consider decoupling these first." data-ar="الكلاسات المرتبطة بأكبر عدد من الكلاسات الأخرى؛ ابدأ بفك الارتباط منها لتقليل هشاشة التصميم.">الكلاسات المرتبطة بأكبر عدد من الكلاسات الأخرى؛ ابدأ بفك الارتباط منها لتقليل هشاشة التصميم.</small>
+        </div>
+        <span class="d-count">10</span>
+      </summary>
+      <div class="d-list"><div class="d-row" data-search="inmemorydatabaseadapter: 19 (academyserviceimpl, authserviceimpl, certificate, chatserviceimpl, contentworkflowserviceimpl, conversation, ...)">
+        <span class="badge b-poor d-badge">CBO 19</span>
+        <code class="d-primary">InMemoryDatabaseAdapter</code>
+        <span class="d-sec">AcademyServiceImpl, AuthServiceImpl, Certificate, ChatServiceImpl, ContentWorkflowServiceImpl, Conversation, ...</span>
+      </div><div class="d-row" data-search="conversation: 18 (chatservice, chatserviceimpl, chatwindowprops, contentworkflowserviceimpl, dialogist, dialogistconversationview, ...)">
+        <span class="badge b-poor d-badge">CBO 18</span>
+        <code class="d-primary">Conversation</code>
+        <span class="d-sec">ChatService, ChatServiceImpl, ChatWindowProps, ContentWorkflowServiceImpl, Dialogist, DialogistConversationView, ...</span>
+      </div><div class="d-row" data-search="message: 17 (chatmessageevent, chatservice, chatserviceimpl, chatwindowprops, conversation, dialogist, ...)">
+        <span class="badge b-poor d-badge">CBO 17</span>
+        <code class="d-primary">Message</code>
+        <span class="d-sec">ChatMessageEvent, ChatService, ChatServiceImpl, ChatWindowProps, Conversation, Dialogist, ...</span>
+      </div><div class="d-row" data-search="user: 16 (administrator, authserviceimpl, chatwindowprops, contentworkflowserviceimpl, conversation, dialogist, ...)">
+        <span class="badge b-poor d-badge">CBO 16</span>
+        <code class="d-primary">User</code>
+        <span class="d-sec">Administrator, AuthServiceImpl, ChatWindowProps, ContentWorkflowServiceImpl, Conversation, Dialogist, ...</span>
+      </div><div class="d-row" data-search="inmemorystorestate: 14 (certificate, conversation, finalattempt, finalexam, inmemorydatabaseadapter, islamicresource, ...)">
+        <span class="badge b-poor d-badge">CBO 14</span>
+        <code class="d-primary">InMemoryStoreState</code>
+        <span class="d-sec">Certificate, Conversation, FinalAttempt, FinalExam, InMemoryDatabaseAdapter, IslamicResource, ...</span>
+      </div><div class="d-row" data-search="contentworkflowserviceimpl: 13 (academyservice, conversation, createorupdatelessondraftinput, createpredefinedmessageinput, createstaffaccountinput, inmemorydatabaseadapter, ...)">
+        <span class="badge b-poor d-badge">CBO 13</span>
+        <code class="d-primary">ContentWorkflowServiceImpl</code>
+        <span class="d-sec">AcademyService, Conversation, CreateOrUpdateLessonDraftInput, CreatePredefinedMessageInput, CreateStaffAccountInput, InMemoryDatabaseAdapter, ...</span>
+      </div><div class="d-row" data-search="usersession: 12 (authservice, authserviceimpl, chatwindowprops, desktopauthsectionprops, dialogistmessagebubbleprops, finalexamloadresult, ...)">
+        <span class="badge b-poor d-badge">CBO 12</span>
+        <code class="d-primary">UserSession</code>
+        <span class="d-sec">AuthService, AuthServiceImpl, ChatWindowProps, DesktopAuthSectionProps, DialogistMessageBubbleProps, FinalExamLoadResult, ...</span>
+      </div><div class="d-row" data-search="learningcontent: 12 (academyservice, academyserviceimpl, contentworkflowserviceimpl, inmemorydatabaseadapter, inmemorystorestate, islamicinstructor, ...)">
+        <span class="badge b-poor d-badge">CBO 12</span>
+        <code class="d-primary">LearningContent</code>
+        <span class="d-sec">AcademyService, AcademyServiceImpl, ContentWorkflowServiceImpl, InMemoryDatabaseAdapter, InMemoryStoreState, IslamicInstructor, ...</span>
+      </div><div class="d-row" data-search="learningprogress: 12 (academyprogress, academyservice, academyserviceimpl, certificate, finalattempt, inmemorydatabaseadapter, ...)">
+        <span class="badge b-poor d-badge">CBO 12</span>
+        <code class="d-primary">LearningProgress</code>
+        <span class="d-sec">AcademyProgress, AcademyService, AcademyServiceImpl, Certificate, FinalAttempt, InMemoryDatabaseAdapter, ...</span>
+      </div><div class="d-row" data-search="predefinedmessage: 11 (chatwindowprops, contentworkflowserviceimpl, dialogist, dialogistloadresult, inmemorydatabaseadapter, inmemorystorestate, ...)">
+        <span class="badge b-poor d-badge">CBO 11</span>
+        <code class="d-primary">PredefinedMessage</code>
+        <span class="d-sec">ChatWindowProps, ContentWorkflowServiceImpl, Dialogist, DialogistLoadResult, InMemoryDatabaseAdapter, InMemoryStoreState, ...</span>
+      </div></div>
+    </details><details class="d-card tone-warn" open>
+      <summary class="d-sum">
+        <div class="d-sum-text">
+          <strong data-en="Least Cohesive Classes (Highest LCOM)" data-ar="أقل الكلاسات تماسكاً (الأعلى في LCOM)">أقل الكلاسات تماسكاً (الأعلى في LCOM)</strong>
+          <small data-en="Classes whose methods rarely share fields—strong candidates to be split into smaller classes." data-ar="كلاسات تحتوي على دوال لا تتشارك نفس البيانات، ما يعني أنها مرشحة بقوة للتقسيم إلى كلاسات أصغر.">كلاسات تحتوي على دوال لا تتشارك نفس البيانات، ما يعني أنها مرشحة بقوة للتقسيم إلى كلاسات أصغر.</small>
+        </div>
+        <span class="d-count">10</span>
+      </summary>
+      <div class="d-list"><div class="d-row" data-search="chatserviceimpl: 7">
+        <span class="badge b-acceptable d-badge">LCOM 7</span>
+        <code class="d-primary">ChatServiceImpl</code>
+        
+      </div><div class="d-row" data-search="emailservice: 5">
+        <span class="badge b-good d-badge">LCOM 5</span>
+        <code class="d-primary">EmailService</code>
+        
+      </div><div class="d-row" data-search="inmemorydatabaseadapter: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">InMemoryDatabaseAdapter</code>
+        
+      </div><div class="d-row" data-search="question: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">Question</code>
+        
+      </div><div class="d-row" data-search="quiz: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">Quiz</code>
+        
+      </div><div class="d-row" data-search="finalexam: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">FinalExam</code>
+        
+      </div><div class="d-row" data-search="learningcontent: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">LearningContent</code>
+        
+      </div><div class="d-row" data-search="learningprogress: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">LearningProgress</code>
+        
+      </div><div class="d-row" data-search="quizattempt: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">QuizAttempt</code>
+        
+      </div><div class="d-row" data-search="finalattempt: 0">
+        <span class="badge b-good d-badge">LCOM 0</span>
+        <code class="d-primary">FinalAttempt</code>
+        
+      </div></div>
+    </details><details class="d-card tone-warn" open>
+      <summary class="d-sum">
+        <div class="d-sum-text">
+          <strong data-en="Hardest-to-Maintain Files (Lowest MI)" data-ar="أصعب الملفات في الصيانة (الأقل في MI)">أصعب الملفات في الصيانة (الأقل في MI)</strong>
+          <small data-en="Files with the lowest Maintainability Index (0–100). Files below 65 deserve refactoring." data-ar="الملفات الحاصلة على أدنى درجة في مؤشر الصيانة (من 100). الملفات الأقل من 65 تحتاج إعادة هيكلة وتقسيم.">الملفات الحاصلة على أدنى درجة في مؤشر الصيانة (من 100). الملفات الأقل من 65 تحتاج إعادة هيكلة وتقسيم.</small>
+        </div>
+        <span class="d-count">15</span>
+      </summary>
+      <div class="d-list"><div class="d-row" data-search="19.2  src/lib/services/chat-service.ts">
+        <span class="badge b-poor d-badge">MI 19.2</span>
+        <code class="d-primary">src/lib/services/chat-service.ts</code>
+        
+      </div><div class="d-row" data-search="25.3  src/lib/domain/users.ts">
+        <span class="badge b-poor d-badge">MI 25.3</span>
+        <code class="d-primary">src/lib/domain/users.ts</code>
+        
+      </div><div class="d-row" data-search="26.8  src/lib/services/content-workflow-service.ts">
+        <span class="badge b-poor d-badge">MI 26.8</span>
+        <code class="d-primary">src/lib/services/content-workflow-service.ts</code>
+        
+      </div><div class="d-row" data-search="27.7  src/lib/services/auth-service.ts">
+        <span class="badge b-poor d-badge">MI 27.7</span>
+        <code class="d-primary">src/lib/services/auth-service.ts</code>
+        
+      </div><div class="d-row" data-search="29.4  src/app/login/page.tsx">
+        <span class="badge b-poor d-badge">MI 29.4</span>
+        <code class="d-primary">src/app/login/page.tsx</code>
+        
+      </div><div class="d-row" data-search="29.8  src/components/dialogue/conversion-modal.tsx">
+        <span class="badge b-poor d-badge">MI 29.8</span>
+        <code class="d-primary">src/components/dialogue/conversion-modal.tsx</code>
+        
+      </div><div class="d-row" data-search="29.8  src/lib/domain/academy.ts">
+        <span class="badge b-poor d-badge">MI 29.8</span>
+        <code class="d-primary">src/lib/domain/academy.ts</code>
+        
+      </div><div class="d-row" data-search="30.0  src/lib/db/in-memory-adapter.ts">
+        <span class="badge b-poor d-badge">MI 30.0</span>
+        <code class="d-primary">src/lib/db/in-memory-adapter.ts</code>
+        
+      </div><div class="d-row" data-search="30.6  src/app/reset-password/page.tsx">
+        <span class="badge b-poor d-badge">MI 30.6</span>
+        <code class="d-primary">src/app/reset-password/page.tsx</code>
+        
+      </div><div class="d-row" data-search="31.0  src/app/verify/[id]/page.tsx">
+        <span class="badge b-poor d-badge">MI 31.0</span>
+        <code class="d-primary">src/app/verify/[id]/page.tsx</code>
+        
+      </div><div class="d-row" data-search="31.3  src/components/dialogue/dialogist-dialogue-view.tsx">
+        <span class="badge b-poor d-badge">MI 31.3</span>
+        <code class="d-primary">src/components/dialogue/dialogist-dialogue-view.tsx</code>
+        
+      </div><div class="d-row" data-search="31.6  src/app/academy/lessons/[id]/page.tsx">
+        <span class="badge b-poor d-badge">MI 31.6</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx</code>
+        
+      </div><div class="d-row" data-search="31.7  src/app/register/page.tsx">
+        <span class="badge b-poor d-badge">MI 31.7</span>
+        <code class="d-primary">src/app/register/page.tsx</code>
+        
+      </div><div class="d-row" data-search="32.3  src/hooks/use-audio-recorder.ts">
+        <span class="badge b-poor d-badge">MI 32.3</span>
+        <code class="d-primary">src/hooks/use-audio-recorder.ts</code>
+        
+      </div><div class="d-row" data-search="32.5  src/hooks/use-staff-portal.ts">
+        <span class="badge b-poor d-badge">MI 32.5</span>
+        <code class="d-primary">src/hooks/use-staff-portal.ts</code>
+        
+      </div></div>
+    </details><details class="d-card tone-warn">
+      <summary class="d-sum">
+        <div class="d-sum-text">
+          <strong data-en="Most Complex Functions (Highest CC)" data-ar="أكثر الدوال تعقيداً (الأعلى في CC)">أكثر الدوال تعقيداً (الأعلى في CC)</strong>
+          <small data-en="Functions with the most conditional branches and loops. Target ≤ 10 per function." data-ar="الدوال التي تحتوي على أكبر عدد من التفرعات والشروط. يُنصح بألا تتجاوز أي دالة القيمة 10.">الدوال التي تحتوي على أكبر عدد من التفرعات والشروط. يُنصح بألا تتجاوز أي دالة القيمة 10.</small>
+        </div>
+        <span class="d-count">10</span>
+      </summary>
+      <div class="d-list"><div class="d-row" data-search="34  useislamicresources (src/hooks/use-islamic-resources.ts:33)">
+        <span class="badge b-poor d-badge">CC 34</span>
+        <code class="d-primary">useIslamicResources</code>
+        <span class="d-sec">src/hooks/use-islamic-resources.ts:33</span>
+      </div><div class="d-row" data-search="34  handlesubmit (src/hooks/use-profile-page.ts:139)">
+        <span class="badge b-poor d-badge">CC 34</span>
+        <code class="d-primary">handleSubmit</code>
+        <span class="d-sec">src/hooks/use-profile-page.ts:139</span>
+      </div><div class="d-row" data-search="34  usedialoguedataloader (src/hooks/dialogue/use-dialogue-loader.ts:73)">
+        <span class="badge b-poor d-badge">CC 34</span>
+        <code class="d-primary">useDialogueDataLoader</code>
+        <span class="d-sec">src/hooks/dialogue/use-dialogue-loader.ts:73</span>
+      </div><div class="d-row" data-search="33  usestaffportal (src/hooks/use-staff-portal.ts:95)">
+        <span class="badge b-poor d-badge">CC 33</span>
+        <code class="d-primary">useStaffPortal</code>
+        <span class="d-sec">src/hooks/use-staff-portal.ts:95</span>
+      </div><div class="d-row" data-search="31  passwordstrengthmeter (src/components/ui/password-strength-meter.tsx:42)">
+        <span class="badge b-poor d-badge">CC 31</span>
+        <code class="d-primary">PasswordStrengthMeter</code>
+        <span class="d-sec">src/components/ui/password-strength-meter.tsx:42</span>
+      </div><div class="d-row" data-search="30  post (src/app/api/shahadah/upload/route.ts:44)">
+        <span class="badge b-poor d-badge">CC 30</span>
+        <code class="d-primary">POST</code>
+        <span class="d-sec">src/app/api/shahadah/upload/route.ts:44</span>
+      </div><div class="d-row" data-search="29  post (src/app/api/chat/messages/route.ts:42)">
+        <span class="badge b-poor d-badge">CC 29</span>
+        <code class="d-primary">POST</code>
+        <span class="d-sec">src/app/api/chat/messages/route.ts:42</span>
+      </div><div class="d-row" data-search="29  seekerdialogueview (src/components/dialogue/seeker-dialogue-view.tsx:57)">
+        <span class="badge b-poor d-badge">CC 29</span>
+        <code class="d-primary">SeekerDialogueView</code>
+        <span class="d-sec">src/components/dialogue/seeker-dialogue-view.tsx:57</span>
+      </div><div class="d-row" data-search="29  instructortab (src/components/staff/instructor-tab.tsx:78)">
+        <span class="badge b-poor d-badge">CC 29</span>
+        <code class="d-primary">InstructorTab</code>
+        <span class="d-sec">src/components/staff/instructor-tab.tsx:78</span>
+      </div><div class="d-row" data-search="29  useaudiorecorder (src/hooks/use-audio-recorder.ts:155)">
+        <span class="badge b-poor d-badge">CC 29</span>
+        <code class="d-primary">useAudioRecorder</code>
+        <span class="d-sec">src/hooks/use-audio-recorder.ts:155</span>
+      </div></div>
+    </details><details class="d-card tone-info">
+      <summary class="d-sum">
+        <div class="d-sum-text">
+          <strong data-en="Class Diagram Traceability Gaps" data-ar="فجوات مطابقة مخطط الكلاسات">فجوات مطابقة مخطط الكلاسات</strong>
+          <small data-en="Classes, methods, or relations present in the diagram but missing from code (or vice versa)." data-ar="عناصر موجودة في مخطط الكلاسات ولم تُعثر عليها في الكود (أو العكس).">عناصر موجودة في مخطط الكلاسات ولم تُعثر عليها في الكود (أو العكس).</small>
+        </div>
+        <span class="d-count">1</span>
+      </summary>
+      <div class="d-list"><div class="d-row" data-search="code classes missing from diagram: academyprogress, academyservice, academyserviceimpl, apijsonoutcome, articlesectionitem, attemptrecord, autherror, authservice, authserviceimpl, badgeprops, brandpatternmarkprops, buttonprops, capstoneexamcardprops, cardprops, chatclaimevent">
+        <span class="badge b-na d-badge">INFO</span>
+        <code class="d-primary">code classes missing from diagram: AcademyProgress, AcademyService, AcademyServiceImpl, ApiJsonOutcome, ArticleSectionItem, AttemptRecord, AuthError, AuthService, AuthServiceImpl, BadgeProps, BrandPatternMarkProps, ButtonProps, CapstoneExamCardProps, CardProps, ChatClaimEvent</code>
+        
+      </div></div>
+    </details><details class="d-card tone-info">
+      <summary class="d-sum">
+        <div class="d-sum-text">
+          <strong data-en="Most Frequent Style Issues" data-ar="أكثر مشاكل الأسلوب والتنسيق تكراراً">أكثر مشاكل الأسلوب والتنسيق تكراراً</strong>
+          <small data-en="Summary of the top recurring readability/convention findings—fixing these boosts your Style Score fastest." data-ar="ملخص لأكثر الملاحظات تكراراً؛ إصلاح أعلى بندين هنا سيرفع درجة الأسلوب لديك بسرعة كبيرة.">ملخص لأكثر الملاحظات تكراراً؛ إصلاح أعلى بندين هنا سيرفع درجة الأسلوب لديك بسرعة كبيرة.</small>
+        </div>
+        <span class="d-count">8</span>
+      </summary>
+      <div class="d-list"><div class="d-row" data-search="1081 x line too long">
+        <span class="badge b-good d-badge">1081×</span>
+        <code class="d-primary">line too long</code>
+        
+      </div><div class="d-row" data-search="12 x function post">
+        <span class="badge b-good d-badge">12×</span>
+        <code class="d-primary">function POST</code>
+        
+      </div><div class="d-row" data-search="9 x function get">
+        <span class="badge b-good d-badge">9×</span>
+        <code class="d-primary">function GET</code>
+        
+      </div><div class="d-row" data-search="9 x function name">
+        <span class="badge b-good d-badge">9×</span>
+        <code class="d-primary">function name</code>
+        
+      </div><div class="d-row" data-search="3 x deep nesting in post">
+        <span class="badge b-good d-badge">3×</span>
+        <code class="d-primary">deep nesting in POST</code>
+        
+      </div><div class="d-row" data-search="1 x function homepage">
+        <span class="badge b-good d-badge">1×</span>
+        <code class="d-primary">function HomePage</code>
+        
+      </div><div class="d-row" data-search="1 x function academyroadmappage">
+        <span class="badge b-good d-badge">1×</span>
+        <code class="d-primary">function AcademyRoadmapPage</code>
+        
+      </div><div class="d-row" data-search="1 x function certificatepreviewpage">
+        <span class="badge b-good d-badge">1×</span>
+        <code class="d-primary">function CertificatePreviewPage</code>
+        
+      </div></div>
+    </details><details class="d-card tone-info">
+      <summary class="d-sum">
+        <div class="d-sum-text">
+          <strong data-en="Detailed Style &amp; Readability Findings (Top 100)" data-ar="تفاصيل ملاحظات الأسلوب والتنسيق (أول 100)">تفاصيل ملاحظات الأسلوب والتنسيق (أول 100)</strong>
+          <small data-en="Exact file locations and line numbers for naming, length, nesting, and documentation findings." data-ar="الموقع الدقيق بالملف ورقم السطر لكل ملاحظة تنسيق أو تسمية أو طول دالة.">الموقع الدقيق بالملف ورقم السطر لكل ملاحظة تنسيق أو تسمية أو طول دالة.</small>
+        </div>
+        <span class="d-count">100</span>
+      </summary>
+      <div class="d-list"><div class="d-row" data-search="[convention] src/app/layout.tsx:20  line too long (138 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/layout.tsx:20</code>
+        <span class="d-sec">line too long (138 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/layout.tsx:51  line too long (146 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/layout.tsx:51</code>
+        <span class="d-sec">line too long (146 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/layout.tsx:57  line too long (272 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/layout.tsx:57</code>
+        <span class="d-sec">line too long (272 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/not-found.tsx:19  line too long (121 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/not-found.tsx:19</code>
+        <span class="d-sec">line too long (121 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/not-found.tsx:20  line too long (148 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/not-found.tsx:20</code>
+        <span class="d-sec">line too long (148 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/not-found.tsx:27  line too long (118 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/not-found.tsx:27</code>
+        <span class="d-sec">line too long (118 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/page.tsx:105  line too long (155 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/page.tsx:105</code>
+        <span class="d-sec">line too long (155 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/page.tsx:40  function homepage() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/page.tsx:40</code>
+        <span class="d-sec">function HomePage() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/page.tsx:55  line too long (136 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/page.tsx:55</code>
+        <span class="d-sec">line too long (136 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/page.tsx:88  line too long (108 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/page.tsx:88</code>
+        <span class="d-sec">line too long (108 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/page.tsx:91  line too long (132 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/page.tsx:91</code>
+        <span class="d-sec">line too long (132 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/page.tsx:98  line too long (152 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/page.tsx:98</code>
+        <span class="d-sec">line too long (152 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/page.tsx:128  line too long (101 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/page.tsx:128</code>
+        <span class="d-sec">line too long (101 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/academy/page.tsx:37  function academyroadmappage() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/academy/page.tsx:37</code>
+        <span class="d-sec">function AcademyRoadmapPage() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/certificate/[id]/page.tsx:158  line too long (110 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:158</code>
+        <span class="d-sec">line too long (110 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/certificate/[id]/page.tsx:160  line too long (113 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:160</code>
+        <span class="d-sec">line too long (113 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/certificate/[id]/page.tsx:173  line too long (146 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:173</code>
+        <span class="d-sec">line too long (146 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/certificate/[id]/page.tsx:176  line too long (102 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:176</code>
+        <span class="d-sec">line too long (102 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/certificate/[id]/page.tsx:193  line too long (115 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:193</code>
+        <span class="d-sec">line too long (115 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/certificate/[id]/page.tsx:226  line too long (128 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:226</code>
+        <span class="d-sec">line too long (128 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/certificate/[id]/page.tsx:255  line too long (101 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:255</code>
+        <span class="d-sec">line too long (101 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/academy/certificate/[id]/page.tsx:51  function certificatepreviewpage() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/academy/certificate/[id]/page.tsx:51</code>
+        <span class="d-sec">function CertificatePreviewPage() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/final-exam/page.tsx:103  line too long (122 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/final-exam/page.tsx:103</code>
+        <span class="d-sec">line too long (122 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/final-exam/page.tsx:146  line too long (136 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/final-exam/page.tsx:146</code>
+        <span class="d-sec">line too long (136 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/academy/final-exam/page.tsx:48  function finalexampage() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/academy/final-exam/page.tsx:48</code>
+        <span class="d-sec">function FinalExamPage() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/guides/[slug]/route.ts:104  line too long (102 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/guides/[slug]/route.ts:104</code>
+        <span class="d-sec">line too long (102 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/guides/[slug]/route.ts:139  line too long (117 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/guides/[slug]/route.ts:139</code>
+        <span class="d-sec">line too long (117 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/academy/guides/[slug]/route.ts:63  function get() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/academy/guides/[slug]/route.ts:63</code>
+        <span class="d-sec">function GET() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/page.tsx:100  line too long (122 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx:100</code>
+        <span class="d-sec">line too long (122 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/page.tsx:135  line too long (115 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx:135</code>
+        <span class="d-sec">line too long (115 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/page.tsx:185  line too long (136 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx:185</code>
+        <span class="d-sec">line too long (136 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/page.tsx:231  line too long (120 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx:231</code>
+        <span class="d-sec">line too long (120 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/page.tsx:243  line too long (182 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx:243</code>
+        <span class="d-sec">line too long (182 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/page.tsx:282  line too long (192 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx:282</code>
+        <span class="d-sec">line too long (192 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/academy/lessons/[id]/page.tsx:51  function lessonreaderpage() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/page.tsx:51</code>
+        <span class="d-sec">function LessonReaderPage() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:161  line too long (122 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:161</code>
+        <span class="d-sec">line too long (122 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:166  line too long (115 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:166</code>
+        <span class="d-sec">line too long (115 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:170  line too long (139 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:170</code>
+        <span class="d-sec">line too long (139 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:171  line too long (124 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:171</code>
+        <span class="d-sec">line too long (124 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:176  line too long (125 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:176</code>
+        <span class="d-sec">line too long (125 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:200  line too long (107 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:200</code>
+        <span class="d-sec">line too long (107 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:211  line too long (117 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:211</code>
+        <span class="d-sec">line too long (117 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:212  line too long (112 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:212</code>
+        <span class="d-sec">line too long (112 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:220  line too long (103 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:220</code>
+        <span class="d-sec">line too long (103 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/academy/lessons/[id]/quiz/page.tsx:221  line too long (104 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:221</code>
+        <span class="d-sec">line too long (104 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/academy/lessons/[id]/quiz/page.tsx:45  function lessonquizpage() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/academy/lessons/[id]/quiz/page.tsx:45</code>
+        <span class="d-sec">function LessonQuizPage() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/academy/academy-route-helpers.ts:111  function handleacademymutation() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/academy/academy-route-helpers.ts:111</code>
+        <span class="d-sec">function handleAcademyMutation() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/academy/progress/route.ts:34  line too long (103 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/academy/progress/route.ts:34</code>
+        <span class="d-sec">line too long (103 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/academy/progress/route.ts:36  line too long (107 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/academy/progress/route.ts:36</code>
+        <span class="d-sec">line too long (107 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/academy/progress/route.ts:99  line too long (107 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/academy/progress/route.ts:99</code>
+        <span class="d-sec">line too long (107 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/academy/progress/route.ts:58  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/academy/progress/route.ts:58</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/demo-switch/route.ts:84  line too long (108 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/demo-switch/route.ts:84</code>
+        <span class="d-sec">line too long (108 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/demo-switch/route.ts:91  line too long (124 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/demo-switch/route.ts:91</code>
+        <span class="d-sec">line too long (124 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/auth/demo-switch/route.ts:44  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/auth/demo-switch/route.ts:44</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/auth/demo-switch/route.ts:126  function get() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/auth/demo-switch/route.ts:126</code>
+        <span class="d-sec">function GET() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/forgot-password/route.ts:30  line too long (107 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/forgot-password/route.ts:30</code>
+        <span class="d-sec">line too long (107 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/auth/forgot-password/route.ts:18  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/auth/forgot-password/route.ts:18</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/login/route.ts:51  line too long (102 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/login/route.ts:51</code>
+        <span class="d-sec">line too long (102 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/login/route.ts:77  line too long (109 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/login/route.ts:77</code>
+        <span class="d-sec">line too long (109 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/login/route.ts:103  line too long (111 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/login/route.ts:103</code>
+        <span class="d-sec">line too long (111 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/auth/login/route.ts:42  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/auth/login/route.ts:42</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/reset-password/route.ts:65  line too long (109 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/reset-password/route.ts:65</code>
+        <span class="d-sec">line too long (109 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/auth/reset-password/route.ts:33  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/auth/reset-password/route.ts:33</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/auth/session/route.ts:24  function get() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/auth/session/route.ts:24</code>
+        <span class="d-sec">function GET() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/verify-otp/route.ts:46  line too long (109 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/verify-otp/route.ts:46</code>
+        <span class="d-sec">line too long (109 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/verify-otp/route.ts:96  line too long (101 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/verify-otp/route.ts:96</code>
+        <span class="d-sec">line too long (101 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/auth/verify-otp/route.ts:115  line too long (108 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/auth/verify-otp/route.ts:115</code>
+        <span class="d-sec">line too long (108 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/auth/verify-otp/route.ts:38  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/auth/verify-otp/route.ts:38</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/certificates/[id]/download/route.ts:35  line too long (109 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/certificates/[id]/download/route.ts:35</code>
+        <span class="d-sec">line too long (109 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/certificates/[id]/download/route.ts:49  line too long (106 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/certificates/[id]/download/route.ts:49</code>
+        <span class="d-sec">line too long (106 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/certificates/[id]/download/route.ts:21  function get() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/certificates/[id]/download/route.ts:21</code>
+        <span class="d-sec">function GET() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/claim/route.ts:45  line too long (116 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/claim/route.ts:45</code>
+        <span class="d-sec">line too long (116 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/claim/route.ts:56  line too long (116 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/claim/route.ts:56</code>
+        <span class="d-sec">line too long (116 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/claim/route.ts:66  line too long (103 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/claim/route.ts:66</code>
+        <span class="d-sec">line too long (103 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/chat/claim/route.ts:35  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/chat/claim/route.ts:35</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/chat/claim/route.ts:35  deep nesting in post() (&gt;4 levels)">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/chat/claim/route.ts:35</code>
+        <span class="d-sec">deep nesting in POST() (&gt;4 levels)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/initiate/route.ts:64  line too long (101 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/initiate/route.ts:64</code>
+        <span class="d-sec">line too long (101 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/initiate/route.ts:119  line too long (105 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/initiate/route.ts:119</code>
+        <span class="d-sec">line too long (105 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/initiate/route.ts:127  line too long (109 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/initiate/route.ts:127</code>
+        <span class="d-sec">line too long (109 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/initiate/route.ts:130  line too long (104 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/initiate/route.ts:130</code>
+        <span class="d-sec">line too long (104 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/initiate/route.ts:159  line too long (116 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/initiate/route.ts:159</code>
+        <span class="d-sec">line too long (116 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/chat/initiate/route.ts:44  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/chat/initiate/route.ts:44</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/chat/initiate/route.ts:105  function get() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/chat/initiate/route.ts:105</code>
+        <span class="d-sec">function GET() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/messages/route.ts:64  line too long (101 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/messages/route.ts:64</code>
+        <span class="d-sec">line too long (101 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/messages/route.ts:107  line too long (103 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/messages/route.ts:107</code>
+        <span class="d-sec">line too long (103 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/messages/route.ts:114  line too long (105 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/messages/route.ts:114</code>
+        <span class="d-sec">line too long (105 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/messages/route.ts:183  line too long (103 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/messages/route.ts:183</code>
+        <span class="d-sec">line too long (103 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/messages/route.ts:190  line too long (103 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/messages/route.ts:190</code>
+        <span class="d-sec">line too long (103 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/chat/messages/route.ts:42  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/chat/messages/route.ts:42</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/chat/stream/route.ts:50  function get() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/chat/stream/route.ts:50</code>
+        <span class="d-sec">function GET() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/chat/stream/route.ts:100  function start() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/chat/stream/route.ts:100</code>
+        <span class="d-sec">function start() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/stream/sse-dispatcher.ts:34  line too long (106 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/stream/sse-dispatcher.ts:34</code>
+        <span class="d-sec">line too long (106 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/chat/stream/sse-dispatcher.ts:35  line too long (151 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/chat/stream/sse-dispatcher.ts:35</code>
+        <span class="d-sec">line too long (151 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/shahadah/profile/route.ts:130  line too long (106 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/shahadah/profile/route.ts:130</code>
+        <span class="d-sec">line too long (106 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/shahadah/profile/route.ts:42  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/shahadah/profile/route.ts:42</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/shahadah/review/route.ts:121  line too long (101 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/shahadah/review/route.ts:121</code>
+        <span class="d-sec">line too long (101 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/shahadah/review/route.ts:153  line too long (103 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/shahadah/review/route.ts:153</code>
+        <span class="d-sec">line too long (103 &gt; 100)</span>
+      </div><div class="d-row" data-search="[convention] src/app/api/shahadah/review/route.ts:164  line too long (116 &gt; 100)">
+        <span class="badge b-good d-badge">CONVENTION</span>
+        <code class="d-primary">src/app/api/shahadah/review/route.ts:164</code>
+        <span class="d-sec">line too long (116 &gt; 100)</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/shahadah/review/route.ts:42  function post() is longer than 50 lines">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/shahadah/review/route.ts:42</code>
+        <span class="d-sec">function POST() is longer than 50 lines</span>
+      </div><div class="d-row" data-search="[refactor] src/app/api/shahadah/review/route.ts:42  deep nesting in post() (&gt;4 levels)">
+        <span class="badge b-purple d-badge">REFACTOR</span>
+        <code class="d-primary">src/app/api/shahadah/review/route.ts:42</code>
+        <span class="d-sec">deep nesting in POST() (&gt;4 levels)</span>
+      </div></div>
+    </details></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span data-en="Generated by OODM v2.0.2 · Static code analysis report. Review findings in context." data-ar="تم التوليد بواسطة OODM v2.0.2 · تحليل ثابت للكود؛ يُنصح بمراجعة الملاحظات ضمن سياق المشروع.">تم التوليد بواسطة OODM v2.0.2 · تحليل ثابت للكود؛ يُنصح بمراجعة الملاحظات ضمن سياق المشروع.</span>
+    </div>
+    <a class="gh-link" href="https://github.com/braabormo/oodm-cli" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.04 11.04 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+      <span>github.com/braabormo/oodm-cli</span>
+    </a>
+  </footer>
+</main>
+
+<script>
+let activeStatus = 'all';
+let activeDim = 'all';
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = lang === 'ar' ? 'OODM · تقرير جودة الكود' : 'OODM · Code Quality Report';
+  document.querySelectorAll('[data-en]').forEach((el) => {
+    el.textContent = el.dataset[lang];
+  });
+  const inp = document.getElementById('detail-search');
+  if (inp) inp.placeholder = lang === 'ar' ? inp.dataset.phAr : inp.dataset.phEn;
+  document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+
+function applyMetricFilters() {
+  document.querySelectorAll('#metrics-grid .m-card').forEach((card) => {
+    const st = card.dataset.status;
+    const dim = card.dataset.dim;
+    const okSt = activeStatus === 'all'
+      || (activeStatus === 'attention' && (st === 'poor' || st === 'acceptable'))
+      || (activeStatus === 'healthy' && (st === 'excellent' || st === 'good'))
+      || st === activeStatus;
+    const okDim = activeDim === 'all' || dim === activeDim;
+    card.classList.toggle('hidden', !(okSt && okDim));
+  });
+}
+
+function setStatusFilter(st) {
+  activeStatus = st;
+  document.querySelectorAll('[data-st-filter]').forEach((b) => b.classList.toggle('active', b.dataset.stFilter === st));
+  applyMetricFilters();
+}
+
+function setDimFilter(dim) {
+  activeDim = dim;
+  document.querySelectorAll('[data-dim-filter]').forEach((b) => b.classList.toggle('active', b.dataset.dimFilter === dim));
+  applyMetricFilters();
+}
+
+function filterDetails(q) {
+  const term = q.trim().toLowerCase();
+  document.querySelectorAll('#details-wrap .d-card').forEach((card) => {
+    let visible = 0;
+    card.querySelectorAll('.d-row').forEach((row) => {
+      const match = !term || (row.dataset.search || '').includes(term);
+      row.classList.toggle('hidden', !match);
+      if (match) visible += 1;
+    });
+    card.style.display = term && visible === 0 ? 'none' : '';
+    if (term && visible > 0) card.open = true;
+  });
+}
+
+function toggleAllDetails(open) {
+  document.querySelectorAll('#details-wrap .d-card').forEach((c) => { c.open = open; });
+}
+</script>
+</body>
+</html>

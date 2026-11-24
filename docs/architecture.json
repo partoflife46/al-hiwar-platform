@@ -1,0 +1,38 @@
+{
+  "layers": {
+    "domain": [
+      "/src/lib/domain/",
+      "/src/lib/db/core-types.ts"
+    ],
+    "infrastructure": [
+      "/src/lib/email/",
+      "/src/lib/security/",
+      "/src/lib/pdf/",
+      "/src/lib/resources/",
+      "/src/lib/constants/"
+    ],
+    "data": [
+      "/src/lib/db/"
+    ],
+    "services": [
+      "/src/lib/services/"
+    ],
+    "api": [
+      "/src/app/api/"
+    ],
+    "presentation": [
+      "/src/app/",
+      "/src/components/",
+      "/src/hooks/",
+      "/src/lib/context/"
+    ]
+  },
+  "allow": {
+    "domain": [],
+    "infrastructure": ["domain"],
+    "data": ["domain"],
+    "services": ["data", "domain", "infrastructure"],
+    "api": ["services", "data", "domain", "infrastructure"],
+    "presentation": ["services", "domain", "infrastructure"]
+  }
+}

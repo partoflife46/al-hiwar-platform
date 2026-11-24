@@ -1,0 +1,34 @@
+Register account | register, calculateAge, verifyEmail, User
+Verify email code | verifyEmail, verificationCode, User
+Check age (18+) | calculateAge, dateOfBirth, User
+Browse Islamic resources | IslamicResource, uploadIslamicResource
+Log in | login, User
+Reset password | resetPassword, User
+Manage profile | updateProfile, User, NewMuslim
+Complete profile and become New Muslim | updateProfile, NewMuslim
+Submit Shahadah voice note | submitShahadahByVoiceNote, Shahadah, NonMuslim
+Engage in private dialogue | startDiscussion, startConversation, Conversation, NonMuslim
+Choose discussion language | startDiscussion, startConversation, selectOption, language, Conversation
+Study lesson content | displayContent, accessLearningPath, LearningContent
+Take lesson quiz | startQuiz, submitQuiz, Quiz, QuizAttempt
+Track learning progress | updateProgress, monitorStudentProgress, accessLearningPath, LearningProgress
+Take final examination | startFinalExam, submitFinalExam, checkFinalExamEligibility, FinalExam, FinalAttempt
+Obtain PDF certificate | generateCertificate, downloadCertificate, Certificate
+View unanswered questions | viewUnansweredQuestions, Dialogist, Conversation
+Accept and reply conversation | acceptConversation, sendQuickMessage, send, Dialogist, Conversation, Message
+Send predefined quick reply | sendQuickMessage, PredefinedMessage, Dialogist
+Validate Shahadah | validateShahadah, validate, Shahadah, Dialogist
+Send congratulation message | sendQuickMessage, validateShahadah, validate, Message, Dialogist
+Reject Shahadah and request new voice note | rejectShahadah, reject, Shahadah, Dialogist
+Create predefined message | createQuickMessage, PredefinedMessage, Dialogist
+Create educational content | createLearningContent, LearningContent, IslamicInstructor
+Submit content for approval | submitContentForApproval, LearningContent, IslamicInstructor
+Monitor student progress | monitorStudentProgress, LearningProgress, IslamicInstructor
+Approve educational content | approveEducationalContent, LearningContent, Supervisor
+Approve predefined messages | approveQuickMessage, PredefinedMessage, Supervisor
+Supervise staff | superviseStaff, Supervisor
+View platform content (read-only) | viewDataReadOnly, Supervisor
+Create staff accounts | createStaffAccount, Administrator, User
+Manage users and roles | manageAccount, assignRole, Administrator
+Upload Islamic resources | uploadIslamicResource, IslamicResource, Administrator
+Manage platform content | manageAccount, uploadIslamicResource, Administrator, LearningContent
